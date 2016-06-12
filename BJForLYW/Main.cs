@@ -78,9 +78,28 @@ namespace BJForLYW
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 var filename = openFileDialog1.FileName;
-                ExcelHelper.GetPartFromExcel(filename);
+                var getPartlist= ExcelHelper.GetPartFromExcel(filename);
+                pc.GetParts.AddRange(getPartlist);
+                GetPartBindingSource.DataSource = pc.GetParts.Local.ToBindingList();
+                dataGridView2.AutoGenerateColumns = true;
+
                 //MessageBox.Show(filename);
             }
+        }
+
+        private void 保存SToolStripButton1_Click(object sender, EventArgs e)
+        {
+            pc.SaveChanges();
+        }
+
+        private void bindingNavigator2_RefreshItems(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer3_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
