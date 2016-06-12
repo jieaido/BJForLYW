@@ -73,26 +73,26 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.button2 = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.GetPartBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.GetPartNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem1 = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.打开OToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.保存SToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.打印PToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.帮助LToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -113,10 +113,10 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GetPartBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GetPartNavigator2)).BeginInit();
             this.GetPartNavigator2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -552,9 +552,17 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // openFileDialog1
+            // dataGridView2
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.DataSource = this.GetPartBindingSource;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 34);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.Size = new System.Drawing.Size(1246, 504);
+            this.dataGridView2.TabIndex = 1;
             // 
             // GetPartNavigator2
             // 
@@ -591,92 +599,80 @@
             this.GetPartNavigator2.TabIndex = 0;
             this.GetPartNavigator2.Text = "bindingNavigator2";
             // 
+            // bindingNavigatorCountItem1
+            // 
+            this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(53, 31);
+            this.bindingNavigatorCountItem1.Text = "/ {0}";
+            this.bindingNavigatorCountItem1.ToolTipText = "总项数";
+            // 
+            // bindingNavigatorDeleteItem1
+            // 
+            this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
+            this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem1";
+            this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(72, 31);
+            this.bindingNavigatorDeleteItem1.Text = "删除";
+            // 
             // bindingNavigatorMoveFirstItem1
             // 
             this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
-            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
             this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(23, 31);
             this.bindingNavigatorMoveFirstItem1.Text = "移到第一条记录";
             // 
             // bindingNavigatorMovePreviousItem1
             // 
             this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
-            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
             this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(23, 31);
             this.bindingNavigatorMovePreviousItem1.Text = "移到上一条记录";
             // 
             // bindingNavigatorSeparator3
             // 
-            this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator3";
+            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 34);
             // 
             // bindingNavigatorPositionItem1
             // 
             this.bindingNavigatorPositionItem1.AccessibleName = "位置";
             this.bindingNavigatorPositionItem1.AutoSize = false;
-            this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
             this.bindingNavigatorPositionItem1.ToolTipText = "当前位置";
             // 
-            // bindingNavigatorCountItem1
-            // 
-            this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(32, 22);
-            this.bindingNavigatorCountItem1.Text = "/ {0}";
-            this.bindingNavigatorCountItem1.ToolTipText = "总项数";
-            // 
             // bindingNavigatorSeparator4
             // 
-            this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
+            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 34);
             // 
             // bindingNavigatorMoveNextItem1
             // 
             this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
-            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
             this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(23, 31);
             this.bindingNavigatorMoveNextItem1.Text = "移到下一条记录";
             // 
             // bindingNavigatorMoveLastItem1
             // 
             this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
-            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
             this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(23, 31);
             this.bindingNavigatorMoveLastItem1.Text = "移到最后一条记录";
             // 
             // bindingNavigatorSeparator5
             // 
-            this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorDeleteItem1
-            // 
-            this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
-            this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(72, 31);
-            this.bindingNavigatorDeleteItem1.Text = "删除";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.DataSource = this.GetPartBindingSource;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 34);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1246, 504);
-            this.dataGridView2.TabIndex = 1;
+            this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
+            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 34);
             // 
             // 打开OToolStripButton1
             // 
@@ -693,6 +689,7 @@
             this.保存SToolStripButton1.Name = "保存SToolStripButton1";
             this.保存SToolStripButton1.Size = new System.Drawing.Size(98, 31);
             this.保存SToolStripButton1.Text = "保存(&S)";
+            this.保存SToolStripButton1.Click += new System.EventHandler(this.保存SToolStripButton1_Click_1);
             // 
             // 打印PToolStripButton1
             // 
@@ -700,18 +697,18 @@
             this.打印PToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("打印PToolStripButton1.Image")));
             this.打印PToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.打印PToolStripButton1.Name = "打印PToolStripButton1";
-            this.打印PToolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.打印PToolStripButton1.Size = new System.Drawing.Size(23, 31);
             this.打印PToolStripButton1.Text = "打印(&P)";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 34);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 34);
             // 
             // 帮助LToolStripButton
             // 
@@ -719,8 +716,12 @@
             this.帮助LToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("帮助LToolStripButton.Image")));
             this.帮助LToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.帮助LToolStripButton.Name = "帮助LToolStripButton";
-            this.帮助LToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.帮助LToolStripButton.Size = new System.Drawing.Size(23, 31);
             this.帮助LToolStripButton.Text = "帮助(&L)";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Main
             // 
@@ -755,11 +756,11 @@
             this.splitContainer3.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GetPartBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GetPartNavigator2)).EndInit();
             this.GetPartNavigator2.ResumeLayout(false);
             this.GetPartNavigator2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }

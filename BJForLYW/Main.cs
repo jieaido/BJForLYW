@@ -34,6 +34,7 @@ namespace BJForLYW
 
         private void 保存SToolStripButton_Click(object sender, EventArgs e)
         {
+            
             pc.SaveChanges();
 
         }
@@ -87,10 +88,7 @@ namespace BJForLYW
             }
         }
 
-        private void 保存SToolStripButton1_Click(object sender, EventArgs e)
-        {
-            pc.SaveChanges();
-        }
+       
 
         private void bindingNavigator2_RefreshItems(object sender, EventArgs e)
         {
@@ -100,6 +98,13 @@ namespace BJForLYW
         private void splitContainer3_Panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void 保存SToolStripButton1_Click_1(object sender, EventArgs e)
+        {
+            var ss = pc.GetParts.Local.ToBindingList();
+            ExcelHelper.ConfimGetPart(ss);
+            pc.SaveChanges();
         }
     }
 }
