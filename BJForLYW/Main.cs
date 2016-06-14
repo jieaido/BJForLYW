@@ -23,10 +23,10 @@ namespace BJForLYW
         private void Form1_Load(object sender, EventArgs e)
         {
             pc.Parts.Load();
-            bindingSource1.DataSource = pc.Parts.Local.ToBindingList();
+            partbindingSource1.DataSource = pc.Parts.Local.ToBindingList();
            
            
-           bindingNavigator1.BindingSource = bindingSource1;
+           bindingNavigator1.BindingSource = partbindingSource1;
            
             
 
@@ -105,6 +105,32 @@ namespace BJForLYW
             var ss = pc.GetParts.Local.ToBindingList();
             ExcelHelper.ConfimGetPart(ss);
             pc.SaveChanges();
+        }
+
+        private void comboBox1_TextUpdate(object sender, EventArgs e)
+        {
+            
+            
+            
+        }
+
+        private void comboBox1_DropDown(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            string searchTxt = comboBox1.Text.Trim();
+            var searchResult = pc.Parts.Where(
+                s => s.PartName.Contains(searchTxt) || s.PartNum.Contains(searchTxt) || s.PartType.Contains(searchTxt))
+                .Distinct();
+            comboBox1.BeginUpdate();
+
+            foreach (var part in searchResult)
+            {
+                comboBox1.Items.Add(part);
+
+            }
+            comboBox1.DisplayMember = "PartName";
+            comboBox1.ValueMember = "partid";
+            comboBox1.EndUpdate();
         }
     }
 }
