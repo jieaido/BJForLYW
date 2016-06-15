@@ -84,7 +84,40 @@ namespace BJForLYW
         /// <param name="e"></param>
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-           
+            dataGridView1.DataSource = null;
+            var searchTxt = FindPartCom_Shebei.Text.Trim();
+            if (string.IsNullOrEmpty(searchTxt))
+            {
+                dataGridView1.DataSource = partbindingSource1;
+            }
+            else
+            {
+                var searchResult = pc.Database.SqlQuery<int>("SELECT partid FROM Parts WHERE Parts.PartName LIKE @name1 or Parts.PartType Like @name1 or Parts.PartNum like @name1"
+               , new SQLiteParameter("@name1", "%" + searchTxt + "%")).ToList();
+                var tt = pc.Parts.AsEnumerable().Intersect()
+                // var searchResult = pc.Parts.Where(
+                //s => s.PartName.Contains(searchTxt) || s.PartNum.Contains(searchTxt) || s.PartType.Contains(searchTxt))
+                //.Distinct();
+                //partbindingSource1.DataSource = searchResult.ToList();
+                // bindingNavigator1.BindingSource = partbindingSource1;
+
+                dataGridView1.DataSource = searchResult.ToList();//
+                //todo 直接更改dataview的绑定值,数据量不变,更改bingsource的,数据量都变了
+                // dataGridView1.ResetBindings();
+            }
+            dataGridView1.ResetBindings();
+            //comboBox1.BeginUpdate();
+
+            //foreach (var part in searchResult)
+            //{
+            //    comboBox1.Items.Add(part);
+
+            //}
+            //comboBox1.DisplayMember = "PartName";
+            //comboBox1.ValueMember = "partid";
+            //comboBox1.EndUpdate();
+
+
         }
 
         private void comboBox1_Leave(object sender, EventArgs e)
@@ -116,34 +149,7 @@ namespace BJForLYW
 
         private void FindPartCom_Shebei_Validated(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
-            var searchTxt = FindPartCom_Shebei.Text.Trim();
-            if (string.IsNullOrEmpty(searchTxt))
-            {
-                dataGridView1.DataSource = partbindingSource1;
-            }
-            else
-            {
-                var searchResult = pc.Parts.Where(
-               s => s.PartName.Contains(searchTxt) || s.PartNum.Contains(searchTxt) || s.PartType.Contains(searchTxt))
-               .Distinct();
-                //partbindingSource1.DataSource = searchResult.ToList();
-                // bindingNavigator1.BindingSource = partbindingSource1;
-                dataGridView1.DataSource = searchResult.ToList();//
-                //todo 直接更改dataview的绑定值,数据量不变,更改bingsource的,数据量都变了
-                // dataGridView1.ResetBindings();
-            }
-            dataGridView1.ResetBindings();
-            //comboBox1.BeginUpdate();
-
-            //foreach (var part in searchResult)
-            //{
-            //    comboBox1.Items.Add(part);
-
-            //}
-            //comboBox1.DisplayMember = "PartName";
-            //comboBox1.ValueMember = "partid";
-            //comboBox1.EndUpdate();
+          
         }
 
         private void PutPartBtn_shebei_Click(object sender, EventArgs e)
@@ -151,7 +157,7 @@ namespace BJForLYW
             string sss = "%电磁%";
 
             //  var ss = pc.Database.SqlQuery<Part>("SELECT Parts.PartName FROM Parts WHERE Parts.PartName LIKE '%电磁%' ").ToList();//这样写会报错,前面的类型必须和后面查找的属性相配,所以改成了下面的
-            var ss = pc.Database.SqlQuery<Part>("SELECT * FROM Parts WHERE Parts.PartName LIKE @name1 ",new SQLiteParameter("@name1",sss)).ToList();
+           
             string trtr = "MTL隔离器";
             bool ssd = trtr.Contains("阿");
         }
