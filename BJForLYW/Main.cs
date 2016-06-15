@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.SQLite;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using BJForLYW.DB;
+using NPOI.SS.Formula.Functions;
 
 namespace BJForLYW
 {
@@ -11,6 +14,8 @@ namespace BJForLYW
     {
         private IEnumerable<Part> allpartlist;
         private readonly PartContext pc = new PartContext();
+        private Part selectPart=new Part();
+       
 
         public Main()
         {
@@ -19,6 +24,7 @@ namespace BJForLYW
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             pc.Parts.Load();
             partbindingSource1.DataSource = pc.Parts.Local.ToBindingList();
 
@@ -65,6 +71,7 @@ namespace BJForLYW
 
         private void comboBox1_TextUpdate(object sender, EventArgs e)
         {
+            
         }
 
         private void comboBox1_DropDown(object sender, EventArgs e)
@@ -77,7 +84,40 @@ namespace BJForLYW
         /// <param name="e"></param>
         private void comboBox1_TextChanged(object sender, EventArgs e)
         {
-            var searchTxt = comboBox1.Text.Trim();
+           
+        }
+
+        private void comboBox1_Leave(object sender, EventArgs e)
+        {
+            FindPartCom_Shebei.Items.Clear();
+        }
+
+        private void PartbindingNavigator1_RefreshItems(object sender, EventArgs e)
+        {
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+         
+            
+        }
+
+        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            long partid =long.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()) ;
+            dataGridView4.AutoGenerateColumns = false;
+            dataGridView4.DataSource =
+                pc.Parts.Where(s => s.Partid == partid ).ToList();
+            selectPart= pc.Parts.First(s => s.Partid == partid);
+            PutNumNup_shebei.Maximum = selectPart.Num;
+
+
+        }
+
+        private void FindPartCom_Shebei_Validated(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            var searchTxt = FindPartCom_Shebei.Text.Trim();
             if (string.IsNullOrEmpty(searchTxt))
             {
                 dataGridView1.DataSource = partbindingSource1;
@@ -87,7 +127,7 @@ namespace BJForLYW
                 var searchResult = pc.Parts.Where(
                s => s.PartName.Contains(searchTxt) || s.PartNum.Contains(searchTxt) || s.PartType.Contains(searchTxt))
                .Distinct();
-                // partbindingSource1.DataSource = searchResult.ToList();
+                //partbindingSource1.DataSource = searchResult.ToList();
                 // bindingNavigator1.BindingSource = partbindingSource1;
                 dataGridView1.DataSource = searchResult.ToList();//
                 //todo 直接更改dataview的绑定值,数据量不变,更改bingsource的,数据量都变了
@@ -106,24 +146,14 @@ namespace BJForLYW
             //comboBox1.EndUpdate();
         }
 
-        private void comboBox1_Leave(object sender, EventArgs e)
+        private void PutPartBtn_shebei_Click(object sender, EventArgs e)
         {
-            comboBox1.Items.Clear();
-        }
+            string sss = "%电磁%";
 
-        private void PartbindingNavigator1_RefreshItems(object sender, EventArgs e)
-        {
-        }
-
-        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-         
-            
-        }
-
-        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            MessageBox.Show("You double Click Row Header");
+            //  var ss = pc.Database.SqlQuery<Part>("SELECT Parts.PartName FROM Parts WHERE Parts.PartName LIKE '%电磁%' ").ToList();//这样写会报错,前面的类型必须和后面查找的属性相配,所以改成了下面的
+            var ss = pc.Database.SqlQuery<Part>("SELECT * FROM Parts WHERE Parts.PartName LIKE @name1 ",new SQLiteParameter("@name1",sss)).ToList();
+            string trtr = "MTL隔离器";
+            bool ssd = trtr.Contains("阿");
         }
     }
 }
