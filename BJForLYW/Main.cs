@@ -114,5 +114,16 @@ namespace BJForLYW
         private void PartbindingNavigator1_RefreshItems(object sender, EventArgs e)
         {
         }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+         
+            
+        }
+
+        private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            MessageBox.Show("You double Click Row Header");
+        }
     }
 }
