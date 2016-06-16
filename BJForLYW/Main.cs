@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Data.SQLite;
 using System.Linq;
 using System.Text;
@@ -121,12 +122,25 @@ namespace BJForLYW
 
         private void PutPartBtn_shebei_Click(object sender, EventArgs e)
         {
-            string sss = "%电磁%";
+            if (selectPart==null)
+            {
+                return;
+            }
+            if (string.IsNullOrEmpty(PutPeopleNameTxt_shebei.Text))
+            {
+                MessageBox.Show("请填写出库人");
+                return;
+            }
+            if (PutNumNup_shebei.Value==0)
+            {
+                MessageBox.Show("不能出0个，改一下出库数量");
+            }
+            pc.PutParts.Add(new PutPart(selectPart, PutPeopleNameTxt_shebei.Text,
+                PutTImeDtp_shebei.Value.ToShortDateString(), (int)PutNumNup_shebei.Value));
+            selectPart.Num = selectPart.Num - (int)PutNumNup_shebei.Value;
+            pc.Parts.AddOrUpdate(selectPart);
+            pc.SaveChanges();
 
-            //  var ss = pc.Database.SqlQuery<Part>("SELECT Parts.PartName FROM Parts WHERE Parts.PartName LIKE '%电磁%' ").ToList();//这样写会报错,前面的类型必须和后面查找的属性相配,所以改成了下面的
-           
-            string trtr = "MTL隔离器";
-            bool ssd = trtr.Contains("阿");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
