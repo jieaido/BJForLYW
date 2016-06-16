@@ -93,6 +93,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB\Comparer.cs" />
     <Compile Include="DB\ExcelHelper.cs" />
     <Compile Include="DB\GetPart.cs" />
     <Compile Include="DB\Part.cs" />
