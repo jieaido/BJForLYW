@@ -564,7 +564,7 @@
             this.textBox1.Location = new System.Drawing.Point(85, 6);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(318, 21);
+            this.textBox1.Size = new System.Drawing.Size(617, 21);
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -611,7 +611,7 @@
             // 
             // PutPartBtn_shebei
             // 
-            this.PutPartBtn_shebei.Location = new System.Drawing.Point(671, 23);
+            this.PutPartBtn_shebei.Location = new System.Drawing.Point(597, 32);
             this.PutPartBtn_shebei.Name = "PutPartBtn_shebei";
             this.PutPartBtn_shebei.Size = new System.Drawing.Size(105, 36);
             this.PutPartBtn_shebei.TabIndex = 2;

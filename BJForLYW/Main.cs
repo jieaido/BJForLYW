@@ -138,12 +138,13 @@ namespace BJForLYW
             }
             else
             {
+           
                 var searchResult = pc.Database.SqlQuery<Part>("SELECT * FROM Parts WHERE Parts.PartName LIKE @name1 or Parts.PartType Like @name1 or Parts.PartNum like @name1"
                , new SQLiteParameter("@name1", "%" + searchTxt + "%")).ToList();
                 var tt = pc.Parts.ToList().Intersect(searchResult, new PartComparer());
-                // var searchResult = pc.Parts.Where(
-                //s => s.PartName.Contains(searchTxt) || s.PartNum.Contains(searchTxt) || s.PartType.Contains(searchTxt))
-                //.Distinct();
+               // var searchResult = pc.Parts.Where(
+               //s => s.PartName.Contains(searchTxt) || s.PartNum.Contains(searchTxt) || s.PartType.Contains(searchTxt))
+               //.Distinct();
                 //partbindingSource1.DataSource = searchResult.ToList();
                 // bindingNavigator1.BindingSource = partbindingSource1;
 
