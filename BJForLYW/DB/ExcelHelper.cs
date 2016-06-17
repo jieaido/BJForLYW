@@ -105,5 +105,21 @@ namespace BJForLYW.DB
 
 
         }
+
+        public static PutPart GenerationPutPartFromPart(Part part, long putnum, string puttime, string putPeopleName)
+        {
+            PutPart  putPart=new PutPart();
+            putPart.PartNum = part.PartNum;
+            putPart.PartName = part.PartName;
+            putPart.PartType = part.PartType;
+            putPart.Unit = part.Unit;
+            putPart.Price = part.Price;
+            putPart.PartId = part.Partid;
+            putPart.Part = part;
+            putPart.PutNum = putnum;
+            putPart.PutTime = puttime;
+            putPart.PutPeopleName = putPeopleName;
+            return putPart;
+        }
     }
 }

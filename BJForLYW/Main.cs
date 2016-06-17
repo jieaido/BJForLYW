@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using BJForLYW.DB;
+using BJForLYW.Properties;
 using NPOI.SS.Formula.Functions;
 
 namespace BJForLYW
@@ -15,7 +16,7 @@ namespace BJForLYW
     {
         private IEnumerable<Part> allpartlist;
         private readonly PartContext pc = new PartContext();
-        private Part selectPart=new Part();
+        private Part selectPart = null;
        
 
         public Main()
@@ -25,7 +26,14 @@ namespace BJForLYW
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            LoadPart();
+            LoadPutPart();
+        }
+        /// <summary>
+        ///加载Part表到datatableview
+        /// </summary>
+        private void LoadPart()
+        {
             pc.Parts.Load();
             partbindingSource1.DataSource = pc.Parts.Local.ToBindingList();
 
@@ -105,7 +113,7 @@ namespace BJForLYW
 
         private void dataGridView1_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            long partid =long.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()) ;
+            long partid =long.Parse(PartDtv.Rows[e.RowIndex].Cells[0].Value.ToString()) ;
             dataGridView4.AutoGenerateColumns = false;
             dataGridView4.DataSource =
                 pc.Parts.Where(s => s.Partid == partid ).ToList();
@@ -124,22 +132,33 @@ namespace BJForLYW
         {
             if (selectPart==null)
             {
+                MessageBox.Show(Resources.Main_PutPartBtn_shebei_Click_请选择要出库的备件);
                 return;
             }
             if (string.IsNullOrEmpty(PutPeopleNameTxt_shebei.Text))
             {
-                MessageBox.Show("请填写出库人");
+                MessageBox.Show(Resources.Main_PutPartBtn_shebei_Click_请填写出库人);
                 return;
             }
             if (PutNumNup_shebei.Value==0)
             {
-                MessageBox.Show("不能出0个，改一下出库数量");
+                MessageBox.Show(Resources.Main_PutPartBtn_shebei_Click_);
+                return;
+                
             }
-            pc.PutParts.Add(new PutPart(selectPart, PutPeopleNameTxt_shebei.Text,
-                PutTImeDtp_shebei.Value.ToShortDateString(), (int)PutNumNup_shebei.Value));
-            selectPart.Num = selectPart.Num - (int)PutNumNup_shebei.Value;
-            pc.Parts.AddOrUpdate(selectPart);
-            pc.SaveChanges();
+            string partinfo = "物料编码：" + selectPart.PartNum + "\n" + "备件名称:" + selectPart.PartName + "\n" + "备件型号:" +
+                              selectPart.PartType;
+            if (MessageBox.Show(partinfo, "确认要出此备件吗？",MessageBoxButtons.OKCancel)==DialogResult.OK)
+            {
+                pc.PutParts.Add(ExcelHelper.GenerationPutPartFromPart(selectPart, (int)PutNumNup_shebei.Value,
+                PutTImeDtp_shebei.Value.ToShortDateString(), PutPeopleNameTxt_shebei.Text));
+                selectPart.Num = selectPart.Num - (int)PutNumNup_shebei.Value;
+                pc.Parts.AddOrUpdate(selectPart);
+                pc.SaveChanges();
+                MessageBox.Show("成功出库!");
+                selectPart = null;
+            }
+            
 
         }
 
@@ -148,7 +167,7 @@ namespace BJForLYW
             var searchTxt = textBox1.Text.Trim();
             if (string.IsNullOrEmpty(searchTxt))
             {
-                dataGridView1.DataSource = partbindingSource1;
+                PartDtv.DataSource = partbindingSource1;
             }
             else
             {
@@ -162,11 +181,11 @@ namespace BJForLYW
                 //partbindingSource1.DataSource = searchResult.ToList();
                 // bindingNavigator1.BindingSource = partbindingSource1;
 
-                dataGridView1.DataSource = tt.ToArray();//
+                PartDtv.DataSource = tt.ToArray();//
                 //todo 直接更改dataview的绑定值,数据量不变,更改bingsource的,数据量都变了
                 // dataGridView1.ResetBindings();
             }
-            dataGridView1.ResetBindings();
+            PartDtv.ResetBindings();
             //comboBox1.BeginUpdate();
 
             //foreach (var part in searchResult)
@@ -177,6 +196,23 @@ namespace BJForLYW
             //comboBox1.DisplayMember = "PartName";
             //comboBox1.ValueMember = "partid";
             //comboBox1.EndUpdate();
+        }
+
+        private void tabControl1_Enter(object sender, EventArgs e)
+        {
+           
+        }
+        /// <summary>
+        /// 加载出库表
+        /// </summary>
+        private void LoadPutPart()
+        {
+            pc.PutParts.Load();
+           
+            putPartbindingSource1.DataSource = pc.PutParts.Local.ToBindingList();
+            putPartbindingNavigator2.BindingSource = putPartbindingSource1;
+           // PutPartDtv.AutoGenerateColumns = true;
+           // PutPartDtv.DataSource = putPartbindingSource1;
         }
     }
 }

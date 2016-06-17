@@ -47,7 +47,7 @@
             this.打开OToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.保存SToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.打印PToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.PartDtv = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,9 +118,8 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.PutPartDtv = new System.Windows.Forms.DataGridView();
+            this.putPartbindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem2 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem2 = new System.Windows.Forms.ToolStripButton();
@@ -133,10 +132,20 @@
             this.bindingNavigatorMoveLastItem2 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.putPartbindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.partbindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PartDtv)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -166,9 +175,10 @@
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).BeginInit();
-            this.bindingNavigator2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PutPartDtv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.putPartbindingNavigator2)).BeginInit();
+            this.putPartbindingNavigator2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.putPartbindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -329,13 +339,13 @@
             this.打印PToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.打印PToolStripButton.Text = "打印(&P)";
             // 
-            // dataGridView1
+            // PartDtv
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PartDtv.AllowUserToOrderColumns = true;
+            this.PartDtv.AllowUserToResizeRows = false;
+            this.PartDtv.AutoGenerateColumns = false;
+            this.PartDtv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PartDtv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
@@ -344,15 +354,15 @@
             this.Column6,
             this.Column7,
             this.Column8});
-            this.dataGridView1.DataSource = this.partbindingSource1;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(1332, 223);
-            this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
-            this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
+            this.PartDtv.DataSource = this.partbindingSource1;
+            this.PartDtv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PartDtv.Location = new System.Drawing.Point(0, 31);
+            this.PartDtv.Name = "PartDtv";
+            this.PartDtv.RowTemplate.Height = 23;
+            this.PartDtv.Size = new System.Drawing.Size(1332, 223);
+            this.PartDtv.TabIndex = 1;
+            this.PartDtv.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
+            this.PartDtv.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
             // Column1
             // 
@@ -417,13 +427,14 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1350, 494);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.Enter += new System.EventHandler(this.tabControl1_Enter);
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.splitContainer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1342, 468);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "设备汇总";
@@ -446,7 +457,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel2.Controls.Add(this.PartDtv);
             this.splitContainer1.Panel2.Controls.Add(this.bindingNavigator1);
             this.splitContainer1.Size = new System.Drawing.Size(1336, 462);
             this.splitContainer1.SplitterDistance = 200;
@@ -463,7 +474,7 @@
             this.tableLayoutPanel2.Controls.Add(this.panel5, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -554,7 +565,7 @@
             this.panel5.Controls.Add(this.label4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(5, 101);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(922, 90);
             this.panel5.TabIndex = 10;
@@ -562,7 +573,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(85, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(617, 21);
             this.textBox1.TabIndex = 9;
@@ -640,8 +651,8 @@
             this.tabPage2.Controls.Add(this.splitContainer3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(1267, 666);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1342, 468);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "入库表";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -664,8 +675,8 @@
             this.splitContainer3.Panel2.Controls.Add(this.dataGridView2);
             this.splitContainer3.Panel2.Controls.Add(this.GetPartNavigator2);
             this.splitContainer3.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer3_Panel2_Paint);
-            this.splitContainer3.Size = new System.Drawing.Size(1261, 660);
-            this.splitContainer3.SplitterDistance = 54;
+            this.splitContainer3.Size = new System.Drawing.Size(1336, 462);
+            this.splitContainer3.SplitterDistance = 37;
             this.splitContainer3.TabIndex = 0;
             // 
             // button2
@@ -687,7 +698,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(0, 34);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.Size = new System.Drawing.Size(1257, 564);
+            this.dataGridView2.Size = new System.Drawing.Size(1332, 383);
             this.dataGridView2.TabIndex = 1;
             // 
             // GetPartNavigator2
@@ -722,7 +733,7 @@
             this.GetPartNavigator2.Name = "GetPartNavigator2";
             this.GetPartNavigator2.PositionItem = this.bindingNavigatorPositionItem1;
             this.GetPartNavigator2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.GetPartNavigator2.Size = new System.Drawing.Size(1257, 34);
+            this.GetPartNavigator2.Size = new System.Drawing.Size(1332, 34);
             this.GetPartNavigator2.TabIndex = 0;
             this.GetPartNavigator2.Text = "bindingNavigator2";
             // 
@@ -850,10 +861,10 @@
             // 
             this.tabPage3.Controls.Add(this.splitContainer4);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage3.Size = new System.Drawing.Size(1267, 666);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Size = new System.Drawing.Size(1342, 468);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "出库表";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -863,7 +874,7 @@
             this.splitContainer4.BackColor = System.Drawing.SystemColors.Control;
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer4.Location = new System.Drawing.Point(2, 2);
-            this.splitContainer4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer4.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer4.Name = "splitContainer4";
             this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -873,10 +884,10 @@
             // 
             // splitContainer4.Panel2
             // 
-            this.splitContainer4.Panel2.Controls.Add(this.dataGridView3);
-            this.splitContainer4.Panel2.Controls.Add(this.bindingNavigator2);
-            this.splitContainer4.Size = new System.Drawing.Size(1263, 662);
-            this.splitContainer4.SplitterDistance = 62;
+            this.splitContainer4.Panel2.Controls.Add(this.PutPartDtv);
+            this.splitContainer4.Panel2.Controls.Add(this.putPartbindingNavigator2);
+            this.splitContainer4.Size = new System.Drawing.Size(1338, 464);
+            this.splitContainer4.SplitterDistance = 43;
             this.splitContainer4.SplitterWidth = 3;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -891,12 +902,12 @@
             this.tableLayoutPanel1.Controls.Add(this.panel4, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1263, 62);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1338, 43);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -906,9 +917,9 @@
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(627, 27);
+            this.panel1.Size = new System.Drawing.Size(665, 17);
             this.panel1.TabIndex = 0;
             // 
             // label5
@@ -924,7 +935,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(531, 3);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(50, 15);
             this.button3.TabIndex = 1;
@@ -935,7 +946,7 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(179, 2);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(334, 20);
             this.comboBox2.TabIndex = 0;
@@ -948,16 +959,16 @@
             this.panel2.Controls.Add(this.comboBox4);
             this.panel2.Controls.Add(this.comboBox3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(2, 33);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(2, 23);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(627, 27);
+            this.panel2.Size = new System.Drawing.Size(665, 18);
             this.panel2.TabIndex = 1;
             // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(531, 7);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(50, 15);
             this.button4.TabIndex = 4;
@@ -988,7 +999,7 @@
             // 
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(179, 3);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(82, 20);
             this.comboBox4.TabIndex = 1;
@@ -997,7 +1008,7 @@
             // 
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(67, 3);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(82, 20);
             this.comboBox3.TabIndex = 0;
@@ -1008,16 +1019,16 @@
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.comboBox5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(633, 2);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(671, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(628, 27);
+            this.panel3.Size = new System.Drawing.Size(665, 17);
             this.panel3.TabIndex = 2;
             // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(228, 4);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(50, 15);
             this.button5.TabIndex = 2;
@@ -1038,7 +1049,7 @@
             // 
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(101, 3);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(82, 20);
             this.comboBox5.TabIndex = 0;
@@ -1047,47 +1058,53 @@
             // 
             this.panel4.Controls.Add(this.button6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(633, 33);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Location = new System.Drawing.Point(671, 23);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(628, 27);
+            this.panel4.Size = new System.Drawing.Size(665, 18);
             this.panel4.TabIndex = 3;
             // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(129, 4);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(196, 19);
             this.button6.TabIndex = 0;
             this.button6.Text = "把底下表格的数据导出去";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // PutPartDtv
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column9});
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 31);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 30;
-            this.dataGridView3.Size = new System.Drawing.Size(1263, 566);
-            this.dataGridView3.TabIndex = 1;
+            this.PutPartDtv.AllowUserToAddRows = false;
+            this.PutPartDtv.AutoGenerateColumns = false;
+            this.PutPartDtv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PutPartDtv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column9,
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column19,
+            this.Column20,
+            this.Column21,
+            this.Column22,
+            this.Column23});
+            this.PutPartDtv.DataSource = this.putPartbindingSource1;
+            this.PutPartDtv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PutPartDtv.Location = new System.Drawing.Point(0, 31);
+            this.PutPartDtv.Margin = new System.Windows.Forms.Padding(2);
+            this.PutPartDtv.Name = "PutPartDtv";
+            this.PutPartDtv.RowTemplate.Height = 30;
+            this.PutPartDtv.Size = new System.Drawing.Size(1338, 387);
+            this.PutPartDtv.TabIndex = 1;
             // 
-            // Column9
+            // putPartbindingNavigator2
             // 
-            this.Column9.HeaderText = "Column9";
-            this.Column9.Name = "Column9";
-            // 
-            // bindingNavigator2
-            // 
-            this.bindingNavigator2.AddNewItem = this.bindingNavigatorAddNewItem1;
-            this.bindingNavigator2.CountItem = this.bindingNavigatorCountItem2;
-            this.bindingNavigator2.DeleteItem = this.bindingNavigatorDeleteItem2;
-            this.bindingNavigator2.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.bindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.putPartbindingNavigator2.AddNewItem = this.bindingNavigatorAddNewItem1;
+            this.putPartbindingNavigator2.CountItem = this.bindingNavigatorCountItem2;
+            this.putPartbindingNavigator2.DeleteItem = this.bindingNavigatorDeleteItem2;
+            this.putPartbindingNavigator2.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.putPartbindingNavigator2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem2,
             this.bindingNavigatorMovePreviousItem2,
             this.bindingNavigatorSeparator6,
@@ -1099,16 +1116,16 @@
             this.bindingNavigatorSeparator8,
             this.bindingNavigatorAddNewItem1,
             this.bindingNavigatorDeleteItem2});
-            this.bindingNavigator2.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigator2.MoveFirstItem = this.bindingNavigatorMoveFirstItem2;
-            this.bindingNavigator2.MoveLastItem = this.bindingNavigatorMoveLastItem2;
-            this.bindingNavigator2.MoveNextItem = this.bindingNavigatorMoveNextItem2;
-            this.bindingNavigator2.MovePreviousItem = this.bindingNavigatorMovePreviousItem2;
-            this.bindingNavigator2.Name = "bindingNavigator2";
-            this.bindingNavigator2.PositionItem = this.bindingNavigatorPositionItem2;
-            this.bindingNavigator2.Size = new System.Drawing.Size(1263, 31);
-            this.bindingNavigator2.TabIndex = 0;
-            this.bindingNavigator2.Text = "bindingNavigator2";
+            this.putPartbindingNavigator2.Location = new System.Drawing.Point(0, 0);
+            this.putPartbindingNavigator2.MoveFirstItem = this.bindingNavigatorMoveFirstItem2;
+            this.putPartbindingNavigator2.MoveLastItem = this.bindingNavigatorMoveLastItem2;
+            this.putPartbindingNavigator2.MoveNextItem = this.bindingNavigatorMoveNextItem2;
+            this.putPartbindingNavigator2.MovePreviousItem = this.bindingNavigatorMovePreviousItem2;
+            this.putPartbindingNavigator2.Name = "putPartbindingNavigator2";
+            this.putPartbindingNavigator2.PositionItem = this.bindingNavigatorPositionItem2;
+            this.putPartbindingNavigator2.Size = new System.Drawing.Size(1338, 31);
+            this.putPartbindingNavigator2.TabIndex = 0;
+            this.putPartbindingNavigator2.Text = "bindingNavigator2";
             // 
             // bindingNavigatorAddNewItem1
             // 
@@ -1199,6 +1216,77 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column9.DataPropertyName = "PartNum";
+            this.Column9.HeaderText = "物料编码";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 78;
+            // 
+            // Column16
+            // 
+            this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column16.DataPropertyName = "PartName";
+            this.Column16.FillWeight = 75F;
+            this.Column16.HeaderText = "备件名称";
+            this.Column16.Name = "Column16";
+            // 
+            // Column17
+            // 
+            this.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column17.DataPropertyName = "PartType";
+            this.Column17.HeaderText = "备件型号";
+            this.Column17.Name = "Column17";
+            // 
+            // Column18
+            // 
+            this.Column18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column18.DataPropertyName = "Unit";
+            this.Column18.HeaderText = "单位";
+            this.Column18.Name = "Column18";
+            this.Column18.Width = 54;
+            // 
+            // Column19
+            // 
+            this.Column19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column19.DataPropertyName = "Price";
+            this.Column19.HeaderText = "单价";
+            this.Column19.Name = "Column19";
+            this.Column19.Width = 54;
+            // 
+            // Column20
+            // 
+            this.Column20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column20.DataPropertyName = "PutNum";
+            this.Column20.HeaderText = "出库数量";
+            this.Column20.Name = "Column20";
+            this.Column20.Width = 78;
+            // 
+            // Column21
+            // 
+            this.Column21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column21.DataPropertyName = "PutTime";
+            this.Column21.HeaderText = "出库时间";
+            this.Column21.Name = "Column21";
+            this.Column21.Width = 78;
+            // 
+            // Column22
+            // 
+            this.Column22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column22.DataPropertyName = "PutPeopleName";
+            this.Column22.HeaderText = "出库人";
+            this.Column22.Name = "Column22";
+            this.Column22.Width = 66;
+            // 
+            // Column23
+            // 
+            this.Column23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column23.DataPropertyName = "PartId";
+            this.Column23.HeaderText = "备件ID";
+            this.Column23.Name = "Column23";
+            this.Column23.Width = 66;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1215,7 +1303,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PartDtv)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -1254,10 +1342,11 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator2)).EndInit();
-            this.bindingNavigator2.ResumeLayout(false);
-            this.bindingNavigator2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PutPartDtv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.putPartbindingNavigator2)).EndInit();
+            this.putPartbindingNavigator2.ResumeLayout(false);
+            this.putPartbindingNavigator2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.putPartbindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1281,7 +1370,7 @@
         private System.Windows.Forms.ToolStripButton 打开OToolStripButton;
         private System.Windows.Forms.ToolStripButton 保存SToolStripButton;
         private System.Windows.Forms.ToolStripButton 打印PToolStripButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView PartDtv;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -1343,9 +1432,8 @@
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.BindingNavigator bindingNavigator2;
+        private System.Windows.Forms.DataGridView PutPartDtv;
+        private System.Windows.Forms.BindingNavigator putPartbindingNavigator2;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem1;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem2;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem2;
@@ -1367,6 +1455,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.BindingSource putPartbindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
     }
 }
 
