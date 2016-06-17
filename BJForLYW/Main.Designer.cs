@@ -117,8 +117,18 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.PutPartToExcel_btn = new System.Windows.Forms.Button();
             this.PutPartDtv = new System.Windows.Forms.DataGridView();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.putPartbindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.putPartbindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem2 = new System.Windows.Forms.ToolStripLabel();
@@ -132,16 +142,6 @@
             this.bindingNavigatorMoveLastItem2 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.putPartbindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.partbindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -176,9 +176,9 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PutPartDtv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.putPartbindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.putPartbindingNavigator2)).BeginInit();
             this.putPartbindingNavigator2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.putPartbindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -887,7 +887,7 @@
             this.splitContainer4.Panel2.Controls.Add(this.PutPartDtv);
             this.splitContainer4.Panel2.Controls.Add(this.putPartbindingNavigator2);
             this.splitContainer4.Size = new System.Drawing.Size(1338, 464);
-            this.splitContainer4.SplitterDistance = 43;
+            this.splitContainer4.SplitterDistance = 160;
             this.splitContainer4.SplitterWidth = 3;
             this.splitContainer4.TabIndex = 0;
             // 
@@ -907,7 +907,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1338, 43);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1338, 160);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -919,7 +919,7 @@
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(665, 17);
+            this.panel1.Size = new System.Drawing.Size(665, 76);
             this.panel1.TabIndex = 0;
             // 
             // label5
@@ -937,7 +937,7 @@
             this.button3.Location = new System.Drawing.Point(531, 3);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(50, 15);
+            this.button3.Size = new System.Drawing.Size(50, 28);
             this.button3.TabIndex = 1;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
@@ -959,10 +959,10 @@
             this.panel2.Controls.Add(this.comboBox4);
             this.panel2.Controls.Add(this.comboBox3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(2, 23);
+            this.panel2.Location = new System.Drawing.Point(2, 82);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(665, 18);
+            this.panel2.Size = new System.Drawing.Size(665, 76);
             this.panel2.TabIndex = 1;
             // 
             // button4
@@ -970,7 +970,7 @@
             this.button4.Location = new System.Drawing.Point(531, 7);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(50, 15);
+            this.button4.Size = new System.Drawing.Size(50, 25);
             this.button4.TabIndex = 4;
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
@@ -1022,7 +1022,7 @@
             this.panel3.Location = new System.Drawing.Point(671, 2);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(665, 17);
+            this.panel3.Size = new System.Drawing.Size(665, 76);
             this.panel3.TabIndex = 2;
             // 
             // button5
@@ -1030,7 +1030,7 @@
             this.button5.Location = new System.Drawing.Point(228, 4);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(50, 15);
+            this.button5.Size = new System.Drawing.Size(50, 27);
             this.button5.TabIndex = 2;
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
@@ -1056,23 +1056,24 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button6);
+            this.panel4.Controls.Add(this.PutPartToExcel_btn);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(671, 23);
+            this.panel4.Location = new System.Drawing.Point(671, 82);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(665, 18);
+            this.panel4.Size = new System.Drawing.Size(665, 76);
             this.panel4.TabIndex = 3;
             // 
-            // button6
+            // PutPartToExcel_btn
             // 
-            this.button6.Location = new System.Drawing.Point(129, 4);
-            this.button6.Margin = new System.Windows.Forms.Padding(2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(196, 19);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "把底下表格的数据导出去";
-            this.button6.UseVisualStyleBackColor = true;
+            this.PutPartToExcel_btn.Location = new System.Drawing.Point(129, 4);
+            this.PutPartToExcel_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.PutPartToExcel_btn.Name = "PutPartToExcel_btn";
+            this.PutPartToExcel_btn.Size = new System.Drawing.Size(196, 28);
+            this.PutPartToExcel_btn.TabIndex = 0;
+            this.PutPartToExcel_btn.Text = "把底下表格的数据导出去";
+            this.PutPartToExcel_btn.UseVisualStyleBackColor = true;
+            this.PutPartToExcel_btn.Click += new System.EventHandler(this.PutPartToExcel_btn_Click);
             // 
             // PutPartDtv
             // 
@@ -1095,8 +1096,79 @@
             this.PutPartDtv.Margin = new System.Windows.Forms.Padding(2);
             this.PutPartDtv.Name = "PutPartDtv";
             this.PutPartDtv.RowTemplate.Height = 30;
-            this.PutPartDtv.Size = new System.Drawing.Size(1338, 387);
+            this.PutPartDtv.Size = new System.Drawing.Size(1338, 270);
             this.PutPartDtv.TabIndex = 1;
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column9.DataPropertyName = "PartNum";
+            this.Column9.HeaderText = "物料编码";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 78;
+            // 
+            // Column16
+            // 
+            this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column16.DataPropertyName = "PartName";
+            this.Column16.FillWeight = 75F;
+            this.Column16.HeaderText = "备件名称";
+            this.Column16.Name = "Column16";
+            // 
+            // Column17
+            // 
+            this.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column17.DataPropertyName = "PartType";
+            this.Column17.HeaderText = "备件型号";
+            this.Column17.Name = "Column17";
+            // 
+            // Column18
+            // 
+            this.Column18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column18.DataPropertyName = "Unit";
+            this.Column18.HeaderText = "单位";
+            this.Column18.Name = "Column18";
+            this.Column18.Width = 54;
+            // 
+            // Column19
+            // 
+            this.Column19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column19.DataPropertyName = "Price";
+            this.Column19.HeaderText = "单价";
+            this.Column19.Name = "Column19";
+            this.Column19.Width = 54;
+            // 
+            // Column20
+            // 
+            this.Column20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column20.DataPropertyName = "PutNum";
+            this.Column20.HeaderText = "出库数量";
+            this.Column20.Name = "Column20";
+            this.Column20.Width = 78;
+            // 
+            // Column21
+            // 
+            this.Column21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column21.DataPropertyName = "PutTime";
+            this.Column21.HeaderText = "出库时间";
+            this.Column21.Name = "Column21";
+            this.Column21.Width = 78;
+            // 
+            // Column22
+            // 
+            this.Column22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column22.DataPropertyName = "PutPeopleName";
+            this.Column22.HeaderText = "出库人";
+            this.Column22.Name = "Column22";
+            this.Column22.Width = 66;
+            // 
+            // Column23
+            // 
+            this.Column23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column23.DataPropertyName = "PartId";
+            this.Column23.HeaderText = "备件ID";
+            this.Column23.Name = "Column23";
+            this.Column23.Width = 66;
             // 
             // putPartbindingNavigator2
             // 
@@ -1216,77 +1288,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column9.DataPropertyName = "PartNum";
-            this.Column9.HeaderText = "物料编码";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 78;
-            // 
-            // Column16
-            // 
-            this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column16.DataPropertyName = "PartName";
-            this.Column16.FillWeight = 75F;
-            this.Column16.HeaderText = "备件名称";
-            this.Column16.Name = "Column16";
-            // 
-            // Column17
-            // 
-            this.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column17.DataPropertyName = "PartType";
-            this.Column17.HeaderText = "备件型号";
-            this.Column17.Name = "Column17";
-            // 
-            // Column18
-            // 
-            this.Column18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column18.DataPropertyName = "Unit";
-            this.Column18.HeaderText = "单位";
-            this.Column18.Name = "Column18";
-            this.Column18.Width = 54;
-            // 
-            // Column19
-            // 
-            this.Column19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column19.DataPropertyName = "Price";
-            this.Column19.HeaderText = "单价";
-            this.Column19.Name = "Column19";
-            this.Column19.Width = 54;
-            // 
-            // Column20
-            // 
-            this.Column20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column20.DataPropertyName = "PutNum";
-            this.Column20.HeaderText = "出库数量";
-            this.Column20.Name = "Column20";
-            this.Column20.Width = 78;
-            // 
-            // Column21
-            // 
-            this.Column21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column21.DataPropertyName = "PutTime";
-            this.Column21.HeaderText = "出库时间";
-            this.Column21.Name = "Column21";
-            this.Column21.Width = 78;
-            // 
-            // Column22
-            // 
-            this.Column22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column22.DataPropertyName = "PutPeopleName";
-            this.Column22.HeaderText = "出库人";
-            this.Column22.Name = "Column22";
-            this.Column22.Width = 66;
-            // 
-            // Column23
-            // 
-            this.Column23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column23.DataPropertyName = "PartId";
-            this.Column23.HeaderText = "备件ID";
-            this.Column23.Name = "Column23";
-            this.Column23.Width = 66;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1343,10 +1344,10 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PutPartDtv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.putPartbindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.putPartbindingNavigator2)).EndInit();
             this.putPartbindingNavigator2.ResumeLayout(false);
             this.putPartbindingNavigator2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.putPartbindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1431,7 +1432,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button PutPartToExcel_btn;
         private System.Windows.Forms.DataGridView PutPartDtv;
         private System.Windows.Forms.BindingNavigator putPartbindingNavigator2;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem1;

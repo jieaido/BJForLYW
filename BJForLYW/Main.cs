@@ -214,5 +214,10 @@ namespace BJForLYW
            // PutPartDtv.AutoGenerateColumns = true;
            // PutPartDtv.DataSource = putPartbindingSource1;
         }
+
+        private void PutPartToExcel_btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

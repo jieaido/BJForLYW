@@ -5,6 +5,7 @@ using System.Data.Entity.Migrations;
 using System.IO;
 using System.Linq;
 using System.Text;
+using NPOI.HPSF;
 using NPOI.HSSF.UserModel;
 
 namespace BJForLYW.DB
@@ -120,6 +121,28 @@ namespace BJForLYW.DB
             putPart.PutTime = puttime;
             putPart.PutPeopleName = putPeopleName;
             return putPart;
+        }
+        public static HSSFWorkbook InitializeWorkbook()
+        {
+            HSSFWorkbook hssfworkbook = new HSSFWorkbook();
+
+            ////create a entry of DocumentSummaryInformation
+            DocumentSummaryInformation dsi = PropertySetFactory.CreateDocumentSummaryInformation();
+            dsi.Company = "安钢动力厂计控车间";
+            hssfworkbook.DocumentSummaryInformation = dsi;
+
+            ////create a entry of SummaryInformation
+            SummaryInformation si = PropertySetFactory.CreateSummaryInformation();
+            si.Subject = "备件表";
+            hssfworkbook.SummaryInformation = si;
+            return hssfworkbook;
+        }
+        static void WriteToFile(HSSFWorkbook hssfWorkbook)
+        {
+            //Write the stream data of workbook to the root directory
+            FileStream file = new FileStream(@"test.xls", FileMode.Create);
+            hssfWorkbook.Write(file);
+            file.Close();
         }
     }
 }
