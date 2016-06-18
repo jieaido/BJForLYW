@@ -87,7 +87,7 @@ namespace BJForLYW.DB
                     }
                     if (findPart != null)
                     {
-                        findPart.Num += getPart.GetNum;
+                        findPart.Num += getPart.GetNum; 
                     }
                     else
                     {
