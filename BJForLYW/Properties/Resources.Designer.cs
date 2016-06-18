@@ -99,6 +99,24 @@ namespace BJForLYW.Properties {
         }
         
         /// <summary>
+        ///   查找类似 导入成功 的本地化字符串。
+        /// </summary>
+        internal static string Main_GetCofirmToDbToolStripButton1_Click_导入成功 {
+            get {
+                return ResourceManager.GetString("Main_GetCofirmToDbToolStripButton1_Click_导入成功", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 请选择要导入的入库文件 的本地化字符串。
+        /// </summary>
+        internal static string Main_GetCofirmToDbToolStripButton1_Click_请选择要导入的入库文件 {
+            get {
+                return ResourceManager.GetString("Main_GetCofirmToDbToolStripButton1_Click_请选择要导入的入库文件", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 不能出0个，改一下出库数量 的本地化字符串。
         /// </summary>
         internal static string Main_PutPartBtn_shebei_Click_ {

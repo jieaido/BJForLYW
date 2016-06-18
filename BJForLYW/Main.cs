@@ -328,12 +328,7 @@ namespace BJForLYW
             }
         }
 
-        private void 保存SToolStripButton1_Click(object sender, EventArgs e)
-        {
-            var ss = GetPartlistFromExcel;
-            ExcelHelper.ConfimGetPart(ss,pc);
-            pc.SaveChanges();
-        }
+        
 
         private void toolStripDropDownButton1_Click(object sender, EventArgs e)
         {
@@ -371,6 +366,20 @@ namespace BJForLYW
             GetPartDtv.ResetBindings();
 
             
+        }
+
+        private void GetCofirmToDbToolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (GetPartlistFromExcel==null)
+            {
+                MessageBox.Show(Resources.Main_GetCofirmToDbToolStripButton1_Click_请选择要导入的入库文件);
+                return;
+            }
+            ExcelHelper.ConfimGetPart(GetPartlistFromExcel, pc);
+            MessageBox.Show(Resources.Main_GetCofirmToDbToolStripButton1_Click_导入成功);
+            // pc.SaveChanges();
+            GetPartlistFromExcel = null;
+            LoadGetPart();
         }
     }
 }

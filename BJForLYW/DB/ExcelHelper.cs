@@ -103,6 +103,7 @@ namespace BJForLYW.DB
                         };
                         
                     }
+                    pc.GetParts.AddOrUpdate(getPart);
                     pc.Parts.AddOrUpdate(findPart);
 
                 }

@@ -134,7 +134,7 @@
             this.保存SToolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.打开OToolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.保存SToolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.GetCofirmToDbToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -1159,7 +1159,7 @@
             this.保存SToolStripButton2,
             this.toolStripSeparator3,
             this.打开OToolStripButton1,
-            this.保存SToolStripButton1,
+            this.GetCofirmToDbToolStripButton1,
             this.toolStripButton2,
             this.toolStripSeparator1,
             this.toolStripLabel1,
@@ -1221,14 +1221,14 @@
             this.打开OToolStripButton1.Text = "从EXCEL导入备件";
             this.打开OToolStripButton1.Click += new System.EventHandler(this.打开OToolStripButton1_Click);
             // 
-            // 保存SToolStripButton1
+            // GetCofirmToDbToolStripButton1
             // 
-            this.保存SToolStripButton1.Image = global::BJForLYW.Properties.Resources.edit_validated;
-            this.保存SToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.保存SToolStripButton1.Name = "保存SToolStripButton1";
-            this.保存SToolStripButton1.Size = new System.Drawing.Size(270, 35);
-            this.保存SToolStripButton1.Text = "确认导入的备件入库?";
-            this.保存SToolStripButton1.Click += new System.EventHandler(this.保存SToolStripButton1_Click);
+            this.GetCofirmToDbToolStripButton1.Image = global::BJForLYW.Properties.Resources.edit_validated;
+            this.GetCofirmToDbToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.GetCofirmToDbToolStripButton1.Name = "GetCofirmToDbToolStripButton1";
+            this.GetCofirmToDbToolStripButton1.Size = new System.Drawing.Size(270, 35);
+            this.GetCofirmToDbToolStripButton1.Text = "确认导入的备件入库?";
+            this.GetCofirmToDbToolStripButton1.Click += new System.EventHandler(this.GetCofirmToDbToolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -1445,7 +1445,7 @@
         private System.Windows.Forms.DataGridView GetPartDtv;
         private System.Windows.Forms.BindingNavigator GetbindingNavigator2;
         private System.Windows.Forms.ToolStripButton 打开OToolStripButton1;
-        private System.Windows.Forms.ToolStripButton 保存SToolStripButton1;
+        private System.Windows.Forms.ToolStripButton GetCofirmToDbToolStripButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
