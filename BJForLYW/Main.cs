@@ -16,9 +16,10 @@ namespace BJForLYW
     public partial class Main : Form
     {
         private IEnumerable<Part> allpartlist;
-        private readonly PartContext pc = new PartContext();
+        private  PartContext pc = new PartContext();
         private Part selectPart = null;
-       
+        public List<GetPart> GetPartlistFromExcel;
+
 
         public Main()
         {
@@ -51,16 +52,7 @@ namespace BJForLYW
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                var filename = openFileDialog1.FileName;
-                var getPartlist = ExcelHelper.GetPartFromExcel(filename);
-                pc.GetParts.AddRange(getPartlist);
-                GetPartBindingSource.DataSource = pc.GetParts.Local.ToBindingList();
-                dataGridView2.AutoGenerateColumns = true;
-
-                //MessageBox.Show(filename);
-            }
+            
         }
 
 
@@ -74,9 +66,7 @@ namespace BJForLYW
 
         private void 保存SToolStripButton1_Click_1(object sender, EventArgs e)
         {
-            var ss = pc.GetParts.Local.ToBindingList();
-            ExcelHelper.ConfimGetPart(ss);
-            pc.SaveChanges();
+           
         }
 
         private void comboBox1_TextUpdate(object sender, EventArgs e)
@@ -201,8 +191,29 @@ namespace BJForLYW
 
         private void tabControl1_Enter(object sender, EventArgs e)
         {
-           
+            LoadGetPart();
         }
+
+        private void LoadGetPart()
+        {
+            #region 时间初始化器
+            for (int i = -3; i < 3; i++)
+            {
+                GetStripCbb_year.Items.Add(DateTime.Now.Year + i);
+            }
+            GetStripCbb_year.SelectedItem = DateTime.Now.Year;
+
+            for (int i = 1; i < 13; i++)
+            {
+                GetStripCbb_month.Items.Add(i);
+            }
+            GetStripCbb_month.SelectedItem = DateTime.Now.Month;    
+            # endregion
+            pc.GetParts.Load();
+            GetPartBindingSource.DataSource = pc.GetParts.Local.ToBindingList();
+            GetbindingNavigator2.BindingSource = GetPartBindingSource;
+        }
+
         /// <summary>
         /// 加载出库表
         /// </summary>
@@ -289,6 +300,77 @@ namespace BJForLYW
         private void button1_Click(object sender, EventArgs e)
         {
             ExcelHelper.DataGridViewToExcel(PartDtv, "库存导出表");
+        }
+
+        
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void bindingNavigator2_RefreshItems_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 打开OToolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                var filename = openFileDialog1.FileName;
+                GetPartlistFromExcel = ExcelHelper.GetPartFromExcel(filename);
+                //pc.GetParts.AddRange(getPartlist);
+                GetPartBindingSource.DataSource = GetPartlistFromExcel;
+                //  GetPartDtv.AutoGenerateColumns = true;
+
+                //MessageBox.Show(filename);
+            }
+        }
+
+        private void 保存SToolStripButton1_Click(object sender, EventArgs e)
+        {
+            var ss = GetPartlistFromExcel;
+            ExcelHelper.ConfimGetPart(ss,pc);
+            pc.SaveChanges();
+        }
+
+        private void toolStripDropDownButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            int year = int.Parse(GetStripCbb_year.Text);
+            int month = int.Parse(GetStripCbb_month.Text);
+
+            DateTime dt = new DateTime(year, month, 1);
+            string ss = dt.ToString("yyyy/M");
+            var serachsource = pc.GetParts.Where(p => p.GetTime.StartsWith(ss)).ToList();
+            GetPartBindingSource.DataSource = serachsource.ToList();
+            GetPartDtv.ResetBindings();
+
+        }
+
+        private void 保存SToolStripButton2_Click(object sender, EventArgs e)
+        {
+            pc.SaveChanges();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+            foreach (var pp  in pc.GetParts.Local.ToBindingList())
+            {
+                pc.Entry(pp).State=EntityState.Unchanged;
+            }
+            
+            // GetPartBindingSource.DataSource = null;
+            LoadGetPart();
+            GetPartDtv.ResetBindings();
+
+            
         }
     }
 }

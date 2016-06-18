@@ -36,6 +36,10 @@ namespace BJForLYW.DB
                 {
                     HSSFRow row = (HSSFRow)rows.Current;
                     GetPart part = new GetPart();
+                    if (row.FirstCellNum<0)
+                    {
+                        continue;
+                    }
                     if (row.FirstCellNum == 0)
                     {
                         part.PartNum = row.Cells[0].ToString().Trim();
@@ -63,13 +67,12 @@ namespace BJForLYW.DB
             return parts;
         }
 
-        public static void ConfimGetPart(BindingList<GetPart> getParts)
+        public static void ConfimGetPart(IEnumerable<GetPart> getParts,PartContext pc)
         {
-            using (PartContext pc = new PartContext())
-            {
+           
                 foreach (var getPart in getParts)
                 {
-                    Part findPart;
+                    Part findPart;  
                     if (getPart.PartNum != "")
                     {
                         findPart = pc.Parts.FirstOrDefault(gp => gp.PartNum == getPart.PartNum);
@@ -104,7 +107,7 @@ namespace BJForLYW.DB
 
                 }
                 pc.SaveChanges();
-            }
+            
 
 
         }

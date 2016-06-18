@@ -107,6 +107,10 @@
     <Compile Include="PartContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\edit-validated.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\export.png" />
+    <None Include="Resources\refresh.png" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

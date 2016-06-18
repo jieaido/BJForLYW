@@ -61,6 +61,16 @@ namespace BJForLYW.Properties {
         }
         
         /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_validated {
+            get {
+                object obj = ResourceManager.GetObject("edit-validated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 导出成功是否打开 的本地化字符串。
         /// </summary>
         internal static string ExcelHelper_WriteToFile_导出成功是否打开 {
@@ -75,6 +85,16 @@ namespace BJForLYW.Properties {
         internal static string ExcelHelper_WriteToFile_提示 {
             get {
                 return ResourceManager.GetString("ExcelHelper_WriteToFile_提示", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap export {
+            get {
+                object obj = ResourceManager.GetObject("export", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -102,6 +122,26 @@ namespace BJForLYW.Properties {
         internal static string Main_PutPartBtn_shebei_Click_请选择要出库的备件 {
             get {
                 return ResourceManager.GetString("Main_PutPartBtn_shebei_Click_请选择要出库的备件", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap refresh {
+            get {
+                object obj = ResourceManager.GetObject("refresh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
