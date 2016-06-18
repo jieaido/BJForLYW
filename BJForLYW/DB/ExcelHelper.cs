@@ -5,6 +5,8 @@ using System.Data.Entity.Migrations;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
+using BJForLYW.Properties;
 using NPOI.HPSF;
 using NPOI.HSSF.UserModel;
 
@@ -122,7 +124,7 @@ namespace BJForLYW.DB
             putPart.PutPeopleName = putPeopleName;
             return putPart;
         }
-        public static HSSFWorkbook InitializeWorkbook()
+       static HSSFWorkbook InitializeWorkbook()
         {
             HSSFWorkbook hssfworkbook = new HSSFWorkbook();
 
@@ -137,12 +139,49 @@ namespace BJForLYW.DB
             hssfworkbook.SummaryInformation = si;
             return hssfworkbook;
         }
-        static void WriteToFile(HSSFWorkbook hssfWorkbook)
-        {
+        static void WriteToFile(HSSFWorkbook hssfWorkbook, string filename)
+       {
+            string pathCurr = System.Environment.CurrentDirectory;
+            string pathstr= Path.Combine(pathCurr, "导出Excel文件", filename);
+           if (!Directory.Exists(pathstr))
+           {
+               Directory.CreateDirectory(pathstr);
+           }
+           string filePath = Path.Combine(pathstr, DateTime.Now.ToString("yyyy年MM月dd天HH时mm分ss秒")+".xls");
+           // string ss=  System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             //Write the stream data of workbook to the root directory
-            FileStream file = new FileStream(@"test.xls", FileMode.Create);
+           //string sss = ss + "\\test.xls";
+            FileStream file = new FileStream(filePath, FileMode.Create);
             hssfWorkbook.Write(file);
             file.Close();
+         
+           if (MessageBox.Show(Resources.ExcelHelper_WriteToFile_导出成功是否打开,Resources.ExcelHelper_WriteToFile_提示,MessageBoxButtons.YesNo)==DialogResult.Yes)
+           {
+               System.Diagnostics.Process.Start(filePath);
+           }
+        }
+
+        public static void DataGridViewToExcel(DataGridView dataGridView, string filename)
+        {
+            HSSFWorkbook hssfWorkbook = InitializeWorkbook();
+            var sheet1 = hssfWorkbook.CreateSheet("Sheet1");
+            var row1 = sheet1.CreateRow(0);
+            for (int i = 0; i < dataGridView.ColumnCount; i++)
+            {
+                row1.CreateCell(i).SetCellValue(dataGridView.Columns[i].HeaderText);
+            }
+            for (int i = 0; i < dataGridView.Rows.Count; i++)
+            {
+                var row2 = sheet1.CreateRow(i + 1);
+                for (int j = 0; j <dataGridView.Rows[i].Cells.Count; j++)
+                {
+                    var value = dataGridView.Rows[i].Cells[j].Value;
+                    if (value != null)
+                        row2.CreateCell(j).SetCellValue(value.ToString());
+                }
+            }
+
+            ExcelHelper.WriteToFile(hssfWorkbook, filename);
         }
     }
 }

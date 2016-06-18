@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using BJForLYW.DB;
 using BJForLYW.Properties;
+using NPOI.HSSF.UserModel;
 using NPOI.SS.Formula.Functions;
 
 namespace BJForLYW
@@ -211,13 +212,83 @@ namespace BJForLYW
            
             putPartbindingSource1.DataSource = pc.PutParts.Local.ToBindingList();
             putPartbindingNavigator2.BindingSource = putPartbindingSource1;
-           // PutPartDtv.AutoGenerateColumns = true;
-           // PutPartDtv.DataSource = putPartbindingSource1;
+
+
+          
+            #region 初始化时间选择器
+            for (int i = -3; i < 3; i++)
+            {
+                PutPartTimeStart_txt.Items.Add(DateTime.Now.Year + i);
+            }
+            PutPartTimeStart_txt.SelectedItem = DateTime.Now.Year;
+
+            for (int i = 1; i < 13; i++)
+            {
+                PutPartTimeStop_txt.Items.Add(i);
+            }
+            PutPartTimeStop_txt.SelectedItem = DateTime.Now.Month; 
+            #endregion
+      
+            // PutPartDtv.AutoGenerateColumns = true;
+            // PutPartDtv.DataSource = putPartbindingSource1;
         }
 
         private void PutPartToExcel_btn_Click(object sender, EventArgs e)
         {
+           ExcelHelper.DataGridViewToExcel(PutPartDtv, "出库导出表");
+        }
 
+        private void PutPatNameSerach_btn_Click(object sender, EventArgs e)
+        {
+            string serachtxt = PutPartNameSerach_txt.Text.Trim();
+            if (!string.IsNullOrEmpty(serachtxt))
+            {
+                var serachSource= pc.PutParts.Where(
+                    p =>
+                        p.PartName.Contains(serachtxt) || p.PartType.Contains(serachtxt) ||
+                        p.PartNum.Contains(serachtxt));
+                putPartbindingSource1.DataSource = serachSource.ToList();
+                PutPartDtv.ResetBindings();
+            }
+            else
+            {
+                putPartbindingSource1.DataSource= pc.PutParts.Local.ToBindingList();
+            }
+
+        }
+
+        private void PutPartPeopleName_btn_Click(object sender, EventArgs e)
+        {
+            string serachtxt = PutPartPeopleName_txt.Text.Trim();
+            if (!string.IsNullOrEmpty(serachtxt))
+            {
+                var serachSource = pc.PutParts.Where(
+                    p =>
+                        p.PutPeopleName.Contains(serachtxt));
+                putPartbindingSource1.DataSource = serachSource.ToList();
+                PutPartDtv.ResetBindings();
+            }
+            else
+            {
+                putPartbindingSource1.DataSource = pc.PutParts.Local.ToBindingList();
+            }
+        }
+
+        private void PutPartTime_btn_Click(object sender, EventArgs e)
+        {
+            int year = int.Parse(PutPartTimeStart_txt.Text);
+            int month = int.Parse(PutPartTimeStop_txt.Text);
+            
+            DateTime dt=new DateTime(year,month,1);
+            string ss = dt.ToString("yyyy/M");
+             var serachsource= pc.PutParts.Where(p => p.PutTime.StartsWith(ss)).ToList();
+            putPartbindingSource1.DataSource = serachsource.ToList();
+            PutPartDtv.ResetBindings();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ExcelHelper.DataGridViewToExcel(PartDtv, "库存导出表");
         }
     }
 }

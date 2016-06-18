@@ -123,4 +123,10 @@
   <data name="Main_PutPartBtn_shebei_Click_请选择要出库的备件" xml:space="preserve">
     <value>请选择要出库的备件</value>
   </data>
+  <data name="ExcelHelper_WriteToFile_导出成功是否打开" xml:space="preserve">
+    <value>导出成功是否打开</value>
+  </data>
+  <data name="ExcelHelper_WriteToFile_提示" xml:space="preserve">
+    <value>提示</value>
+  </data>
 </root>

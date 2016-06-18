@@ -61,6 +61,24 @@ namespace BJForLYW.Properties {
         }
         
         /// <summary>
+        ///   查找类似 导出成功是否打开 的本地化字符串。
+        /// </summary>
+        internal static string ExcelHelper_WriteToFile_导出成功是否打开 {
+            get {
+                return ResourceManager.GetString("ExcelHelper_WriteToFile_导出成功是否打开", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 提示 的本地化字符串。
+        /// </summary>
+        internal static string ExcelHelper_WriteToFile_提示 {
+            get {
+                return ResourceManager.GetString("ExcelHelper_WriteToFile_提示", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 不能出0个，改一下出库数量 的本地化字符串。
         /// </summary>
         internal static string Main_PutPartBtn_shebei_Click_ {
