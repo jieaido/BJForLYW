@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using BJForLYW.Properties;
 using NPOI.HPSF;
 using NPOI.HSSF.UserModel;
+using NPOI.SS.Formula.Functions;
+using NPOI.SS.UserModel;
 
 namespace BJForLYW.DB
 {
@@ -42,12 +44,13 @@ namespace BJForLYW.DB
                     }
                     if (row.FirstCellNum == 0)
                     {
+                        
                         part.PartNum = row.Cells[0].ToString().Trim();
                         part.PartName = row.Cells[1].ToString().Trim();
                         part.PartType = row.Cells[2].ToString().Trim();
                         part.Unit = row.Cells[3].ToString().Trim();
-                        part.Price = (decimal?)row.Cells[4].NumericCellValue;
-                        part.GetNum = (long)row.Cells[5].NumericCellValue;
+                        part.Price = (decimal?) row.Cells[4].NumericCellValue;
+                        part.GetNum = long.Parse(GetStringCellValue(row.Cells[5]));
                     }
                     else
                     {
@@ -55,8 +58,9 @@ namespace BJForLYW.DB
                         part.PartName = row.Cells[0].ToString().Trim();
                         part.PartType = row.Cells[1].ToString().Trim();
                         part.Unit = row.Cells[2].ToString().Trim();
-                        part.Price = (decimal?)row.Cells[3].NumericCellValue;
-                        part.GetNum = (long)row.Cells[4].NumericCellValue;
+
+                        part.Price = (decimal?) row.Cells[3].NumericCellValue;
+                        part.GetNum = long.Parse(GetStringCellValue(row.Cells[4]));
                     }
                     part.GetTime = DateTime.Now.ToShortDateString();
                     parts.Add(part);
@@ -170,16 +174,16 @@ namespace BJForLYW.DB
             HSSFWorkbook hssfWorkbook = InitializeWorkbook();
             var sheet1 = hssfWorkbook.CreateSheet("Sheet1");
             var row1 = sheet1.CreateRow(0);
-            for (int i = 0; i < dataGridView.ColumnCount; i++)
+            for (int i = 0; i < dataGridView.ColumnCount-1; i++)
             {
-                row1.CreateCell(i).SetCellValue(dataGridView.Columns[i].HeaderText);
+                row1.CreateCell(i).SetCellValue(dataGridView.Columns[i+1].HeaderText);
             }
             for (int i = 0; i < dataGridView.Rows.Count; i++)
             {
                 var row2 = sheet1.CreateRow(i + 1);
-                for (int j = 0; j <dataGridView.Rows[i].Cells.Count; j++)
+                for (int j = 0; j <dataGridView.Rows[i].Cells.Count-1; j++)
                 {
-                    var value = dataGridView.Rows[i].Cells[j].Value;
+                    var value = dataGridView.Rows[i].Cells[j+1].Value;
                     if (value != null)
                         row2.CreateCell(j).SetCellValue(value.ToString());
                 }
@@ -187,5 +191,20 @@ namespace BJForLYW.DB
 
             ExcelHelper.WriteToFile(hssfWorkbook, filename);
         }
+
+        private static string GetStringCellValue(ICell cell)
+        {
+            if (cell==null)
+            {
+                return "";
+            }
+            else
+            {
+                return cell.ToString();
+            }
+
+        }
+
+       
     }
 }
