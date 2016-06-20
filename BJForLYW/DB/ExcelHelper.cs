@@ -50,7 +50,7 @@ namespace BJForLYW.DB
                         part.PartType = row.Cells[2].ToString().Trim();
                         part.Unit = row.Cells[3].ToString().Trim();
                         part.Price = (decimal?) row.Cells[4].NumericCellValue;
-                        part.GetNum = long.Parse(GetStringCellValue(row.Cells[5]));
+                        part.GetNum = (long) row.Cells[5].NumericCellValue;
                     }
                     else
                     {
@@ -60,7 +60,7 @@ namespace BJForLYW.DB
                         part.Unit = row.Cells[2].ToString().Trim();
 
                         part.Price = (decimal?) row.Cells[3].NumericCellValue;
-                        part.GetNum = long.Parse(GetStringCellValue(row.Cells[4]));
+                        part.GetNum = (long)row.Cells[4].NumericCellValue;
                     }
                     part.GetTime = DateTime.Now.ToShortDateString();
                     parts.Add(part);
@@ -175,8 +175,11 @@ namespace BJForLYW.DB
             var sheet1 = hssfWorkbook.CreateSheet("Sheet1");
             var row1 = sheet1.CreateRow(0);
             for (int i = 0; i < dataGridView.ColumnCount-1; i++)
+               
             {
+               
                 row1.CreateCell(i).SetCellValue(dataGridView.Columns[i+1].HeaderText);
+            
             }
             for (int i = 0; i < dataGridView.Rows.Count; i++)
             {
@@ -185,8 +188,24 @@ namespace BJForLYW.DB
                 {
                     var value = dataGridView.Rows[i].Cells[j+1].Value;
                     if (value != null)
-                        row2.CreateCell(j).SetCellValue(value.ToString());
+                    {
+                        decimal tempnum;
+                        if (decimal.TryParse(value.ToString(), out tempnum))
+                        {
+                            row2.CreateCell(j).SetCellValue((double) tempnum);
+                        }
+                        else
+                        {
+                            row2.CreateCell(j).SetCellValue(value.ToString());
+                        }
+                       
+                    }
+                    
                 }
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                sheet1.AutoSizeColumn(i);
             }
 
             ExcelHelper.WriteToFile(hssfWorkbook, filename);
