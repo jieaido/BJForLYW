@@ -41,6 +41,7 @@ namespace BJForLYW
 
 
             bindingNavigator1.BindingSource = partbindingSource1;
+            PartDtv.AutoGenerateColumns = false;
         }
 
         private void 保存SToolStripButton_Click(object sender, EventArgs e)
@@ -380,6 +381,11 @@ namespace BJForLYW
             // pc.SaveChanges();
             GetPartlistFromExcel = null;
             LoadGetPart();
+        }
+
+        private void PartDtv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

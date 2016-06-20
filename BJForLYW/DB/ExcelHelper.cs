@@ -45,12 +45,13 @@ namespace BJForLYW.DB
                     if (row.FirstCellNum == 0)
                     {
                         
-                        part.PartNum = row.Cells[0].ToString().Trim();
-                        part.PartName = row.Cells[1].ToString().Trim();
-                        part.PartType = row.Cells[2].ToString().Trim();
-                        part.Unit = row.Cells[3].ToString().Trim();
-                        part.Price = (decimal?) row.Cells[4].NumericCellValue;
-                        part.GetNum = (long) row.Cells[5].NumericCellValue;
+                        part.PartNum = row.GetCell(0).ToString().Trim();
+                        part.PartName = row.GetCell(1).ToString().Trim();
+                        part.PartType = row.GetCell(2).ToString().Trim();
+                        part.Unit = row.GetCell(3).ToString().Trim();
+                        //bool b = row.GetCell(4) == null;
+                        part.Price = row.GetCell(4)==null?0:(decimal?) row.GetCell(4).NumericCellValue;
+                        part.GetNum = (long) row.GetCell(5).NumericCellValue;
                     }
                     else
                     {
@@ -68,6 +69,7 @@ namespace BJForLYW.DB
                 }
                 //pc.SaveChanges();
             }
+            MessageBox.Show($"成功导入{parts.Count}条数据");
             return parts;
         }
 
