@@ -345,7 +345,7 @@ namespace BJForLYW
                 {
                     var filename = openFileDialog1.FileName;
                     var parts = ExcelHelper.GetPartTableFromExcel(filename);
-                    pc.Parts.RemoveRange(pc.Parts.ToList());
+                    pc.Database.ExecuteSqlCommand("delete from Parts");
                     partbindingSource1.DataSource = parts;
                     pc.Parts.AddRange(parts);
                     pc.SaveChanges();
