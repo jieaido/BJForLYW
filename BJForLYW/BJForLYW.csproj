@@ -107,6 +107,7 @@
     <Compile Include="PartContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\clear.png" />
     <None Include="Resources\database_previous.png" />
     <None Include="Resources\excel_alt_1.png" />
     <None Include="Resources\edit-validated.png" />

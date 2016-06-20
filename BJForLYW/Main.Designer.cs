@@ -31,6 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Button PutPartPeopleName_btn;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.partbindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
@@ -45,8 +57,9 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.保存SToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.PartDtv = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,9 +72,10 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.PartDtvToExcel_btn = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.PartRemarks_txt = new System.Windows.Forms.TextBox();
+            this.partSearchTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PutTImeDtp_shebei = new System.Windows.Forms.DateTimePicker();
@@ -70,7 +84,7 @@
             this.PutPartBtn_shebei = new System.Windows.Forms.Button();
             this.PutNumNup_shebei = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.selectPutPartDtv = new System.Windows.Forms.DataGridView();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,6 +119,7 @@
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.putPartbindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.putPartbindingNavigator2 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
@@ -120,6 +135,7 @@
             this.bindingNavigatorSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.GetPartDtv = new System.Windows.Forms.DataGridView();
+            this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,9 +159,17 @@
             this.GetStripCbb_month = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.功能ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.清理数据库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.备份数据库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.查看帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             PutPartPeopleName_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.partbindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
@@ -160,7 +184,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PutNumNup_shebei)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectPutPartDtv)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
@@ -180,6 +204,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.GetPartBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GetbindingNavigator2)).BeginInit();
             this.GetbindingNavigator2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PutPartPeopleName_btn
@@ -227,7 +252,6 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(1257, 31);
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
-            this.bindingNavigator1.RefreshItems += new System.EventHandler(this.PartbindingNavigator1_RefreshItems);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -321,14 +345,10 @@
             this.保存SToolStripButton.Text = "保存";
             this.保存SToolStripButton.Click += new System.EventHandler(this.保存SToolStripButton_Click);
             // 
-            // toolStripButton4
+            // toolStripSeparator4
             // 
-            this.toolStripButton4.Image = global::BJForLYW.Properties.Resources.excel_alt_1;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(156, 28);
-            this.toolStripButton4.Text = "导出到Excel文件";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripButton5
             // 
@@ -339,10 +359,30 @@
             this.toolStripButton5.Text = "从Excel文件导入";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = global::BJForLYW.Properties.Resources.excel_alt_1;
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(156, 28);
+            this.toolStripButton4.Text = "导出到Excel文件";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            // 
             // PartDtv
             // 
             this.PartDtv.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.PartDtv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.PartDtv.AutoGenerateColumns = false;
+            this.PartDtv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PartDtv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.PartDtv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PartDtv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -353,14 +393,20 @@
             this.Column6,
             this.Column7});
             this.PartDtv.DataSource = this.partbindingSource1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.PartDtv.DefaultCellStyle = dataGridViewCellStyle4;
             this.PartDtv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PartDtv.Location = new System.Drawing.Point(0, 31);
             this.PartDtv.Name = "PartDtv";
             this.PartDtv.RowTemplate.Height = 23;
-            this.PartDtv.Size = new System.Drawing.Size(1257, 223);
+            this.PartDtv.Size = new System.Drawing.Size(1257, 248);
             this.PartDtv.TabIndex = 1;
-            this.PartDtv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PartDtv_CellContentClick);
-            this.PartDtv.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             this.PartDtv.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
             // Column1
@@ -401,9 +447,14 @@
             // 
             // Column6
             // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column6.DataPropertyName = "Price";
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column6.HeaderText = "单价";
             this.Column6.Name = "Column6";
+            this.Column6.Width = 74;
             // 
             // Column7
             // 
@@ -417,12 +468,11 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(0, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1275, 494);
+            this.tabControl1.Size = new System.Drawing.Size(1275, 469);
             this.tabControl1.TabIndex = 2;
-            this.tabControl1.Enter += new System.EventHandler(this.tabControl1_Enter);
             // 
             // tabPage1
             // 
@@ -430,7 +480,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1267, 468);
+            this.tabPage1.Size = new System.Drawing.Size(1267, 443);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "设备汇总";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -441,7 +491,6 @@
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(3, 3);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -454,40 +503,30 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.PartDtv);
             this.splitContainer1.Panel2.Controls.Add(this.bindingNavigator1);
-            this.splitContainer1.Size = new System.Drawing.Size(1261, 462);
-            this.splitContainer1.SplitterDistance = 200;
+            this.splitContainer1.Size = new System.Drawing.Size(1261, 437);
+            this.splitContainer1.SplitterDistance = 150;
             this.splitContainer1.TabIndex = 2;
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.PartDtvToExcel_btn, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.panel5, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.dataGridView4, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.selectPutPartDtv, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1257, 196);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1257, 146);
             this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // PartDtvToExcel_btn
-            // 
-            this.PartDtvToExcel_btn.Location = new System.Drawing.Point(1008, 101);
-            this.PartDtvToExcel_btn.Name = "PartDtvToExcel_btn";
-            this.PartDtvToExcel_btn.Size = new System.Drawing.Size(152, 48);
-            this.PartDtvToExcel_btn.TabIndex = 11;
-            this.PartDtvToExcel_btn.Text = "把底下的表格导出到Excel文件";
-            this.PartDtvToExcel_btn.UseVisualStyleBackColor = true;
-            this.PartDtvToExcel_btn.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.PartRemarks_txt);
+            this.panel5.Controls.Add(this.partSearchTxt);
             this.panel5.Controls.Add(this.label1);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Controls.Add(this.PutTImeDtp_shebei);
@@ -497,20 +536,37 @@
             this.panel5.Controls.Add(this.PutNumNup_shebei);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(2, 100);
+            this.panel5.Location = new System.Drawing.Point(2, 75);
             this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1001, 94);
+            this.panel5.Size = new System.Drawing.Size(1253, 69);
             this.panel5.TabIndex = 10;
             // 
-            // textBox1
+            // label9
             // 
-            this.textBox1.Location = new System.Drawing.Point(85, 6);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(488, 21);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(658, 6);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 12);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "备注";
+            // 
+            // PartRemarks_txt
+            // 
+            this.PartRemarks_txt.Location = new System.Drawing.Point(693, 1);
+            this.PartRemarks_txt.Multiline = true;
+            this.PartRemarks_txt.Name = "PartRemarks_txt";
+            this.PartRemarks_txt.Size = new System.Drawing.Size(157, 61);
+            this.PartRemarks_txt.TabIndex = 10;
+            // 
+            // partSearchTxt
+            // 
+            this.partSearchTxt.Location = new System.Drawing.Point(85, 6);
+            this.partSearchTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.partSearchTxt.Name = "partSearchTxt";
+            this.partSearchTxt.Size = new System.Drawing.Size(488, 21);
+            this.partSearchTxt.TabIndex = 9;
+            this.partSearchTxt.TextChanged += new System.EventHandler(this.partSearchTxt_TextChanged);
             // 
             // label1
             // 
@@ -555,9 +611,10 @@
             // 
             // PutPartBtn_shebei
             // 
-            this.PutPartBtn_shebei.Location = new System.Drawing.Point(589, 12);
+            this.PutPartBtn_shebei.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PutPartBtn_shebei.Location = new System.Drawing.Point(930, 6);
             this.PutPartBtn_shebei.Name = "PutPartBtn_shebei";
-            this.PutPartBtn_shebei.Size = new System.Drawing.Size(105, 36);
+            this.PutPartBtn_shebei.Size = new System.Drawing.Size(201, 60);
             this.PutPartBtn_shebei.TabIndex = 2;
             this.PutPartBtn_shebei.Text = "把这个备件出掉";
             this.PutPartBtn_shebei.UseVisualStyleBackColor = true;
@@ -579,27 +636,27 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "时间";
             // 
-            // dataGridView4
+            // selectPutPartDtv
             // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.AllowUserToResizeRows = false;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.selectPutPartDtv.AllowUserToAddRows = false;
+            this.selectPutPartDtv.AllowUserToDeleteRows = false;
+            this.selectPutPartDtv.AllowUserToResizeRows = false;
+            this.selectPutPartDtv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.selectPutPartDtv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column10,
             this.Column11,
             this.Column12,
             this.Column13,
             this.Column14,
             this.Column15});
-            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView4.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.RowTemplate.Height = 23;
-            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(999, 92);
-            this.dataGridView4.TabIndex = 9;
+            this.selectPutPartDtv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.selectPutPartDtv.Location = new System.Drawing.Point(3, 3);
+            this.selectPutPartDtv.Name = "selectPutPartDtv";
+            this.selectPutPartDtv.ReadOnly = true;
+            this.selectPutPartDtv.RowTemplate.Height = 23;
+            this.selectPutPartDtv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.selectPutPartDtv.Size = new System.Drawing.Size(1251, 67);
+            this.selectPutPartDtv.TabIndex = 9;
             // 
             // Column10
             // 
@@ -657,7 +714,7 @@
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPage3.Size = new System.Drawing.Size(1267, 468);
+            this.tabPage3.Size = new System.Drawing.Size(1267, 443);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "出库表";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -680,13 +737,14 @@
             // 
             this.splitContainer4.Panel2.Controls.Add(this.PutPartDtv);
             this.splitContainer4.Panel2.Controls.Add(this.putPartbindingNavigator2);
-            this.splitContainer4.Size = new System.Drawing.Size(1263, 464);
-            this.splitContainer4.SplitterDistance = 102;
+            this.splitContainer4.Size = new System.Drawing.Size(1263, 439);
+            this.splitContainer4.SplitterDistance = 150;
             this.splitContainer4.SplitterWidth = 3;
             this.splitContainer4.TabIndex = 0;
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -701,7 +759,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.96078F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.03922F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1263, 102);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1263, 150);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -710,10 +768,10 @@
             this.panel1.Controls.Add(this.PutPatNameSerach_btn);
             this.panel1.Controls.Add(this.PutPartNameSerach_txt);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Location = new System.Drawing.Point(4, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(627, 48);
+            this.panel1.Size = new System.Drawing.Size(624, 70);
             this.panel1.TabIndex = 0;
             // 
             // label5
@@ -754,10 +812,10 @@
             this.panel2.Controls.Add(this.PutPartTimeStop_txt);
             this.panel2.Controls.Add(this.PutPartTimeStart_txt);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(2, 54);
+            this.panel2.Location = new System.Drawing.Point(4, 80);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(627, 46);
+            this.panel2.Size = new System.Drawing.Size(624, 66);
             this.panel2.TabIndex = 1;
             // 
             // PutPartTime_btn
@@ -818,10 +876,10 @@
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.PutPartPeopleName_txt);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(633, 2);
+            this.panel3.Location = new System.Drawing.Point(634, 4);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(628, 48);
+            this.panel3.Size = new System.Drawing.Size(625, 70);
             this.panel3.TabIndex = 2;
             // 
             // label8
@@ -848,18 +906,19 @@
             // 
             this.panel4.Controls.Add(this.PutPartToExcel_btn);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(633, 54);
+            this.panel4.Location = new System.Drawing.Point(634, 80);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(628, 46);
+            this.panel4.Size = new System.Drawing.Size(625, 66);
             this.panel4.TabIndex = 3;
             // 
             // PutPartToExcel_btn
             // 
-            this.PutPartToExcel_btn.Location = new System.Drawing.Point(101, 8);
+            this.PutPartToExcel_btn.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PutPartToExcel_btn.Location = new System.Drawing.Point(43, 8);
             this.PutPartToExcel_btn.Margin = new System.Windows.Forms.Padding(2);
             this.PutPartToExcel_btn.Name = "PutPartToExcel_btn";
-            this.PutPartToExcel_btn.Size = new System.Drawing.Size(196, 28);
+            this.PutPartToExcel_btn.Size = new System.Drawing.Size(224, 41);
             this.PutPartToExcel_btn.TabIndex = 0;
             this.PutPartToExcel_btn.Text = "把底下表格的数据导出去";
             this.PutPartToExcel_btn.UseVisualStyleBackColor = true;
@@ -868,7 +927,18 @@
             // PutPartDtv
             // 
             this.PutPartDtv.AllowUserToAddRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.PutPartDtv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.PutPartDtv.AutoGenerateColumns = false;
+            this.PutPartDtv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.PutPartDtv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.PutPartDtv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PutPartDtv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column29,
@@ -879,14 +949,23 @@
             this.Column19,
             this.Column20,
             this.Column21,
-            this.Column22});
+            this.Column22,
+            this.Column30});
             this.PutPartDtv.DataSource = this.putPartbindingSource1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.PutPartDtv.DefaultCellStyle = dataGridViewCellStyle8;
             this.PutPartDtv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PutPartDtv.Location = new System.Drawing.Point(0, 31);
             this.PutPartDtv.Margin = new System.Windows.Forms.Padding(2);
             this.PutPartDtv.Name = "PutPartDtv";
             this.PutPartDtv.RowTemplate.Height = 30;
-            this.PutPartDtv.Size = new System.Drawing.Size(1263, 328);
+            this.PutPartDtv.Size = new System.Drawing.Size(1263, 255);
             this.PutPartDtv.TabIndex = 1;
             // 
             // Column29
@@ -902,7 +981,7 @@
             this.Column9.DataPropertyName = "PartNum";
             this.Column9.HeaderText = "物料编码";
             this.Column9.Name = "Column9";
-            this.Column9.Width = 78;
+            this.Column9.Width = 114;
             // 
             // Column16
             // 
@@ -925,15 +1004,18 @@
             this.Column18.DataPropertyName = "Unit";
             this.Column18.HeaderText = "单位";
             this.Column18.Name = "Column18";
-            this.Column18.Width = 54;
+            this.Column18.Width = 69;
             // 
             // Column19
             // 
             this.Column19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column19.DataPropertyName = "Price";
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.Column19.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column19.HeaderText = "单价";
             this.Column19.Name = "Column19";
-            this.Column19.Width = 54;
+            this.Column19.Width = 69;
             // 
             // Column20
             // 
@@ -941,7 +1023,7 @@
             this.Column20.DataPropertyName = "PutNum";
             this.Column20.HeaderText = "出库数量";
             this.Column20.Name = "Column20";
-            this.Column20.Width = 78;
+            this.Column20.Width = 87;
             // 
             // Column21
             // 
@@ -949,7 +1031,7 @@
             this.Column21.DataPropertyName = "PutTime";
             this.Column21.HeaderText = "出库时间";
             this.Column21.Name = "Column21";
-            this.Column21.Width = 78;
+            this.Column21.Width = 87;
             // 
             // Column22
             // 
@@ -957,7 +1039,13 @@
             this.Column22.DataPropertyName = "PutPeopleName";
             this.Column22.HeaderText = "出库人";
             this.Column22.Name = "Column22";
-            this.Column22.Width = 66;
+            this.Column22.Width = 87;
+            // 
+            // Column30
+            // 
+            this.Column30.DataPropertyName = "Remark";
+            this.Column30.HeaderText = "备注";
+            this.Column30.Name = "Column30";
             // 
             // putPartbindingNavigator2
             // 
@@ -997,6 +1085,7 @@
             this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem1.Text = "新添";
+            this.bindingNavigatorAddNewItem1.Visible = false;
             // 
             // bindingNavigatorCountItem2
             // 
@@ -1007,11 +1096,10 @@
             // 
             // bindingNavigatorDeleteItem2
             // 
-            this.bindingNavigatorDeleteItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorDeleteItem2.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem2.Image")));
             this.bindingNavigatorDeleteItem2.Name = "bindingNavigatorDeleteItem2";
             this.bindingNavigatorDeleteItem2.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem2.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorDeleteItem2.Size = new System.Drawing.Size(60, 28);
             this.bindingNavigatorDeleteItem2.Text = "删除";
             // 
             // bindingNavigatorMoveFirstItem2
@@ -1081,16 +1169,28 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1267, 468);
+            this.tabPage4.Size = new System.Drawing.Size(1267, 443);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "入库表";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // GetPartDtv
             // 
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GetPartDtv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.GetPartDtv.AutoGenerateColumns = false;
+            this.GetPartDtv.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GetPartDtv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.GetPartDtv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GetPartDtv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column31,
             this.Column8,
             this.Column23,
             this.Column24,
@@ -1099,13 +1199,30 @@
             this.Column27,
             this.Column28});
             this.GetPartDtv.DataSource = this.GetPartBindingSource;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GetPartDtv.DefaultCellStyle = dataGridViewCellStyle12;
             this.GetPartDtv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GetPartDtv.Location = new System.Drawing.Point(0, 31);
             this.GetPartDtv.Margin = new System.Windows.Forms.Padding(2);
             this.GetPartDtv.Name = "GetPartDtv";
+            this.GetPartDtv.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.GetPartDtv.RowTemplate.Height = 30;
-            this.GetPartDtv.Size = new System.Drawing.Size(1267, 437);
+            this.GetPartDtv.Size = new System.Drawing.Size(1267, 412);
             this.GetPartDtv.TabIndex = 4;
+            // 
+            // Column31
+            // 
+            this.Column31.DataPropertyName = "GetpartId";
+            this.Column31.HeaderText = "ID";
+            this.Column31.Name = "Column31";
+            this.Column31.ReadOnly = true;
+            this.Column31.Visible = false;
             // 
             // Column8
             // 
@@ -1131,27 +1248,38 @@
             // 
             // Column25
             // 
+            this.Column25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column25.DataPropertyName = "Unit";
             this.Column25.HeaderText = "单位";
             this.Column25.Name = "Column25";
+            this.Column25.Width = 69;
             // 
             // Column26
             // 
+            this.Column26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column26.DataPropertyName = "Price";
+            dataGridViewCellStyle11.Format = "C2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.Column26.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column26.HeaderText = "单价";
             this.Column26.Name = "Column26";
+            this.Column26.Width = 69;
             // 
             // Column27
             // 
+            this.Column27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column27.DataPropertyName = "GetNum";
             this.Column27.HeaderText = "入库数量";
             this.Column27.Name = "Column27";
+            this.Column27.Width = 87;
             // 
             // Column28
             // 
+            this.Column28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column28.DataPropertyName = "GetTime";
             this.Column28.HeaderText = "入库时间";
             this.Column28.Name = "Column28";
+            this.Column28.Width = 87;
             // 
             // GetbindingNavigator2
             // 
@@ -1175,7 +1303,7 @@
             this.GetStripCbb_month,
             this.toolStripButton3,
             this.toolStripSeparator2,
-            this.toolStripProgressBar1});
+            this.toolStripButton6});
             this.GetbindingNavigator2.Location = new System.Drawing.Point(0, 0);
             this.GetbindingNavigator2.MoveFirstItem = null;
             this.GetbindingNavigator2.MoveLastItem = null;
@@ -1221,7 +1349,7 @@
             // 
             // 打开OToolStripButton1
             // 
-            this.打开OToolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("打开OToolStripButton1.Image")));
+            this.打开OToolStripButton1.Image = global::BJForLYW.Properties.Resources.database_previous;
             this.打开OToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.打开OToolStripButton1.Name = "打开OToolStripButton1";
             this.打开OToolStripButton1.Size = new System.Drawing.Size(165, 28);
@@ -1240,11 +1368,12 @@
             // 
             // toolStripButton2
             // 
-            this.toolStripButton2.Image = global::BJForLYW.Properties.Resources.export;
+            this.toolStripButton2.Image = global::BJForLYW.Properties.Resources.excel_alt_1;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(213, 28);
             this.toolStripButton2.Text = "从下面表格导出到EXCEL";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripSeparator1
             // 
@@ -1259,6 +1388,7 @@
             // 
             // GetStripCbb_year
             // 
+            this.GetStripCbb_year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GetStripCbb_year.Name = "GetStripCbb_year";
             this.GetStripCbb_year.Size = new System.Drawing.Size(75, 31);
             // 
@@ -1270,6 +1400,7 @@
             // 
             // GetStripCbb_month
             // 
+            this.GetStripCbb_month.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.GetStripCbb_month.Name = "GetStripCbb_month";
             this.GetStripCbb_month.Size = new System.Drawing.Size(75, 31);
             // 
@@ -1287,20 +1418,89 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
-            // toolStripProgressBar1
+            // toolStripButton6
             // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(67, 28);
+            this.toolStripButton6.Image = global::BJForLYW.Properties.Resources.clear;
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(118, 28);
+            this.toolStripButton6.Text = "清理入库表";
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click_1);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "Excel文件|*.xls;*.xlsx";
             // 
-            // toolStripSeparator4
+            // menuStrip1
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 31);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.功能ToolStripMenuItem,
+            this.帮助ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1275, 25);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // 功能ToolStripMenuItem
+            // 
+            this.功能ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.清理数据库ToolStripMenuItem,
+            this.备份数据库ToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.退出ToolStripMenuItem});
+            this.功能ToolStripMenuItem.Name = "功能ToolStripMenuItem";
+            this.功能ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.功能ToolStripMenuItem.Text = "功能";
+            // 
+            // 清理数据库ToolStripMenuItem
+            // 
+            this.清理数据库ToolStripMenuItem.Name = "清理数据库ToolStripMenuItem";
+            this.清理数据库ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.清理数据库ToolStripMenuItem.Text = "初始化数据库";
+            this.清理数据库ToolStripMenuItem.Click += new System.EventHandler(this.清理数据库ToolStripMenuItem_Click);
+            // 
+            // 备份数据库ToolStripMenuItem
+            // 
+            this.备份数据库ToolStripMenuItem.Name = "备份数据库ToolStripMenuItem";
+            this.备份数据库ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.备份数据库ToolStripMenuItem.Text = "备份数据库";
+            this.备份数据库ToolStripMenuItem.Click += new System.EventHandler(this.备份数据库ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+            // 
+            // 退出ToolStripMenuItem
+            // 
+            this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.退出ToolStripMenuItem.Text = "退出";
+            this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
+            // 
+            // 帮助ToolStripMenuItem
+            // 
+            this.帮助ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.查看帮助ToolStripMenuItem,
+            this.关于ToolStripMenuItem});
+            this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.帮助ToolStripMenuItem.Text = "帮助";
+            // 
+            // 查看帮助ToolStripMenuItem
+            // 
+            this.查看帮助ToolStripMenuItem.Name = "查看帮助ToolStripMenuItem";
+            this.查看帮助ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.查看帮助ToolStripMenuItem.Text = "查看帮助";
+            // 
+            // 关于ToolStripMenuItem
+            // 
+            this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.关于ToolStripMenuItem.Text = "关于";
+            this.关于ToolStripMenuItem.Click += new System.EventHandler(this.关于ToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -1309,6 +1509,8 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1275, 494);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -1330,7 +1532,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PutNumNup_shebei)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectPutPartDtv)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel2.ResumeLayout(false);
@@ -1357,7 +1559,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.GetbindingNavigator2)).EndInit();
             this.GetbindingNavigator2.ResumeLayout(false);
             this.GetbindingNavigator2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1421,24 +1626,16 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem2;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem2;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator8;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView selectPutPartDtv;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox partSearchTxt;
         private System.Windows.Forms.BindingSource putPartbindingSource1;
         private System.Windows.Forms.ComboBox PutPartTimeStart_txt;
-        private System.Windows.Forms.Button PartDtvToExcel_btn;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView GetPartDtv;
         private System.Windows.Forms.BindingNavigator GetbindingNavigator2;
         private System.Windows.Forms.ToolStripButton 打开OToolStripButton1;
         private System.Windows.Forms.ToolStripButton GetCofirmToDbToolStripButton1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column28;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -1448,26 +1645,9 @@
         private System.Windows.Forms.ToolStripComboBox GetStripCbb_month;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem1;
         private System.Windows.Forms.ToolStripButton 保存SToolStripButton2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
@@ -1478,6 +1658,43 @@
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox PartRemarks_txt;
+        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 功能ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 清理数据库ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 备份数据库ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 查看帮助ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column26;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column28;
     }
 }
 

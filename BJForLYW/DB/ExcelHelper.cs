@@ -73,7 +73,11 @@ namespace BJForLYW.DB
             MessageBox.Show($"成功导入{parts.Count}条数据");
             return parts;
         }
-
+        /// <summary>
+        /// 从excel文件导入到设备表
+        /// </summary>
+        /// <param name="filePath">导入的文件路径</param>
+        /// <returns></returns>
         public static List<Part> GetPartTableFromExcel(string filePath)
         {
             List<GetPart> getParts = GetgetPartTableFromExcel(filePath);
@@ -86,7 +90,11 @@ namespace BJForLYW.DB
 
 
         }
-
+        /// <summary>
+        /// 从getpart转换到Part
+        /// </summary>
+        /// <param name="getPart">要转换的实体</param>
+        /// <returns></returns>
         static Part ConvertGetPartToPart(GetPart getPart)
         {
             Part part=new Part()
@@ -100,18 +108,25 @@ namespace BJForLYW.DB
             };
             return part;
         }
+        /// <summary>
+        /// 确认导入的入库表数量并更新设备表
+        /// </summary>
+        /// <param name="getParts"></param>
+        /// <param name="pc"></param>
         public static void ConfimGetPart(IEnumerable<GetPart> getParts,PartContext pc)
         {
            
                 foreach (var getPart in getParts)
                 {
                     Part findPart;  
+                      //首先要确认的是物料编码
                     if (getPart.PartNum != "")
                     {
                         findPart = pc.Parts.FirstOrDefault(gp => gp.PartNum == getPart.PartNum);
 
                     }
-                    else
+                   
+                    else//如果不行就查询名称或者型号
                     {
                         findPart =
                             pc.Parts.FirstOrDefault(
@@ -145,8 +160,16 @@ namespace BJForLYW.DB
 
 
         }
-
-        public static PutPart GenerationPutPartFromPart(Part part, long putnum, string puttime, string putPeopleName)
+        /// <summary>
+        /// 根据选择的备件生成出库表
+        /// </summary>
+        /// <param name="part">要出的备件</param>
+        /// <param name="putnum">要出的备件数量</param>
+        /// <param name="puttime">出库的时间</param>
+        /// <param name="putPeopleName">出库人</param>
+        /// <param name="remarks">备注</param>
+        /// <returns></returns>
+        public static PutPart GenerationPutPartFromPart(Part part, long putnum, string puttime, string putPeopleName,string remarks)
         {
             PutPart  putPart=new PutPart();
             putPart.PartNum = part.PartNum;
@@ -159,8 +182,14 @@ namespace BJForLYW.DB
             putPart.PutNum = putnum;
             putPart.PutTime = puttime;
             putPart.PutPeopleName = putPeopleName;
+            putPart.Remark = remarks;
             return putPart;
         }
+
+        /// <summary>
+        /// 初始化excel表
+        /// </summary>
+        /// <returns></returns>
        static HSSFWorkbook InitializeWorkbook()
         {
             HSSFWorkbook hssfworkbook = new HSSFWorkbook();
@@ -176,6 +205,11 @@ namespace BJForLYW.DB
             hssfworkbook.SummaryInformation = si;
             return hssfworkbook;
         }
+        /// <summary>
+        /// 写入Excel文件
+        /// </summary>
+        /// <param name="hssfWorkbook"></param>
+        /// <param name="filename"></param>
         static void WriteToFile(HSSFWorkbook hssfWorkbook, string filename)
        {
             string pathCurr = System.Environment.CurrentDirectory;
@@ -197,7 +231,11 @@ namespace BJForLYW.DB
                System.Diagnostics.Process.Start(filePath);
            }
         }
-
+        /// <summary>
+        /// 从datagridview导出到excel
+        /// </summary>
+        /// <param name="dataGridView"></param>
+        /// <param name="filename"></param>
         public static void DataGridViewToExcel(DataGridView dataGridView, string filename)
         {
             HSSFWorkbook hssfWorkbook = InitializeWorkbook();

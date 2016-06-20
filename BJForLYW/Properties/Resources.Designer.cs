@@ -63,6 +63,16 @@ namespace BJForLYW.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap clear {
+            get {
+                object obj = ResourceManager.GetObject("clear", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap database_previous {
             get {
                 object obj = ResourceManager.GetObject("database_previous", resourceCulture);
@@ -146,6 +156,15 @@ namespace BJForLYW.Properties {
         }
         
         /// <summary>
+        ///   查找类似 成功出库! 的本地化字符串。
+        /// </summary>
+        internal static string Main_PutPartBtn_shebei_Click_成功出库_ {
+            get {
+                return ResourceManager.GetString("Main_PutPartBtn_shebei_Click_成功出库_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 请填写出库人 的本地化字符串。
         /// </summary>
         internal static string Main_PutPartBtn_shebei_Click_请填写出库人 {
@@ -170,6 +189,34 @@ namespace BJForLYW.Properties {
         internal static string Main_toolStripButton5_Click_ {
             get {
                 return ResourceManager.GetString("Main_toolStripButton5_Click_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 保存成功 的本地化字符串。
+        /// </summary>
+        internal static string Main_保存SToolStripButton_Click_保存成功 {
+            get {
+                return ResourceManager.GetString("Main_保存SToolStripButton_Click_保存成功", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 计控车间备件管理小程序\n给流氓做的\n不要指望它能做很多\n版权:崔健 的本地化字符串。
+        /// </summary>
+        internal static string Main_关于ToolStripMenuItem_Click_版权_崔健 {
+            get {
+                return ResourceManager.GetString("Main_关于ToolStripMenuItem_Click_版权_崔健", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 此行为会清除所有的数据库信息,除非你知道你在干什么,否则不要点确定
+        ///确定要初始化数据库吗? 的本地化字符串。
+        /// </summary>
+        internal static string Main_清理数据库ToolStripMenuItem_Click_ {
+            get {
+                return ResourceManager.GetString("Main_清理数据库ToolStripMenuItem_Click_", resourceCulture);
             }
         }
         
