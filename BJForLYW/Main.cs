@@ -436,7 +436,18 @@ namespace BJForLYW
 
         private void 关于ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Resources.Main_关于ToolStripMenuItem_Click_版权_崔健,"关于",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show(Resources.Main_关于ToolStripMenuItem_Click_, "关于",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
+        private void 查看帮助ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string filePath = Path.Combine(Environment.CurrentDirectory, "帮助.doc");
+            System.Diagnostics.Process.Start(filePath);
+        }
+
+        private void 保存SToolStripButton1_Click(object sender, EventArgs e)
+        {
+            DtvSaveAndMBox();
         }
     }
 }

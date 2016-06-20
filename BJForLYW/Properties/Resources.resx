@@ -177,4 +177,10 @@
   <data name="Main_关于ToolStripMenuItem_Click_版权_崔健" xml:space="preserve">
     <value>计控车间备件管理小程序\n给流氓做的\n不要指望它能做很多\n版权:崔健</value>
   </data>
+  <data name="Main_关于ToolStripMenuItem_Click_" xml:space="preserve">
+    <value>计控车间备件管理小程序
+给流氓做的
+不要指望它能做很多
+版权:崔健</value>
+  </data>
 </root>

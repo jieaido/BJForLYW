@@ -202,6 +202,18 @@ namespace BJForLYW.Properties {
         }
         
         /// <summary>
+        ///   查找类似 计控车间备件管理小程序
+        ///给流氓做的
+        ///不要指望它能做很多
+        ///版权:崔健 的本地化字符串。
+        /// </summary>
+        internal static string Main_关于ToolStripMenuItem_Click_ {
+            get {
+                return ResourceManager.GetString("Main_关于ToolStripMenuItem_Click_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 计控车间备件管理小程序\n给流氓做的\n不要指望它能做很多\n版权:崔健 的本地化字符串。
         /// </summary>
         internal static string Main_关于ToolStripMenuItem_Click_版权_崔健 {
