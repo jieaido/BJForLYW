@@ -41,7 +41,7 @@ namespace BJForLYW.DB
                     if (row.FirstCellNum<0)
                     {
                         continue;
-                    }
+                    } 
                     if (row.FirstCellNum == 0)
                     {
                         
