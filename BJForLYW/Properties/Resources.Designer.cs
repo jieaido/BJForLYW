@@ -63,9 +63,29 @@ namespace BJForLYW.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap database_previous {
+            get {
+                object obj = ResourceManager.GetObject("database_previous", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap edit_validated {
             get {
                 object obj = ResourceManager.GetObject("edit-validated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap excel_alt_1 {
+            get {
+                object obj = ResourceManager.GetObject("excel_alt_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -140,6 +160,16 @@ namespace BJForLYW.Properties {
         internal static string Main_PutPartBtn_shebei_Click_请选择要出库的备件 {
             get {
                 return ResourceManager.GetString("Main_PutPartBtn_shebei_Click_请选择要出库的备件", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 此操作会重置备件库存表,除非你知道你在干什么,否则不要重新导入
+        /// 如果有问题你可以单项修改或者从入库表导入来修改 的本地化字符串。
+        /// </summary>
+        internal static string Main_toolStripButton5_Click_ {
+            get {
+                return ResourceManager.GetString("Main_toolStripButton5_Click_", resourceCulture);
             }
         }
         

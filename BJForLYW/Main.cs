@@ -300,7 +300,7 @@ namespace BJForLYW
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ExcelHelper.DataGridViewToExcel(PartDtv, "库存导出表");
+           
         }
 
         
@@ -320,7 +320,7 @@ namespace BJForLYW
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 var filename = openFileDialog1.FileName;
-                GetPartlistFromExcel = ExcelHelper.GetPartFromExcel(filename);
+                GetPartlistFromExcel = ExcelHelper.GetgetPartTableFromExcel(filename);
                 //pc.GetParts.AddRange(getPartlist);
                 GetPartBindingSource.DataSource = GetPartlistFromExcel;
                 //  GetPartDtv.AutoGenerateColumns = true;
@@ -386,6 +386,33 @@ namespace BJForLYW
         private void PartDtv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            ExcelHelper.DataGridViewToExcel(PartDtv, "库存导出表");
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(Resources.Main_toolStripButton5_Click_,"警告",MessageBoxButtons.OKCancel)==DialogResult.OK)
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    var filename = openFileDialog1.FileName;
+                    var parts = ExcelHelper.GetPartTableFromExcel(filename);
+                    pc.Parts.RemoveRange(pc.Parts.ToList());
+                  
+                  
+                    
+                    partbindingSource1.DataSource = parts;
+                    pc.Parts.AddRange(parts);
+                    pc.SaveChanges();
+
+
+
+                }
+            }
         }
     }
 }

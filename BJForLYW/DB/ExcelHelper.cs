@@ -21,9 +21,10 @@ namespace BJForLYW.DB
         /// </summary>
         /// <param name="filePath"></param>
         /// <returns></returns>
-        public static List<GetPart> GetPartFromExcel(string filePath)
+        public static List<GetPart> GetgetPartTableFromExcel(string filePath)
         {
-            List<GetPart> parts = new List<GetPart>();
+            var parts = new List<GetPart>();
+           // List<GetPart> parts = new List<GetPart>();
             HSSFWorkbook hssfWorkbook;
             using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
@@ -73,6 +74,32 @@ namespace BJForLYW.DB
             return parts;
         }
 
+        public static List<Part> GetPartTableFromExcel(string filePath)
+        {
+            List<GetPart> getParts = GetgetPartTableFromExcel(filePath);
+            List<Part> parts=new List<Part>();
+            foreach (var getPart in getParts)
+            {
+                parts.Add(ConvertGetPartToPart(getPart));
+            }
+            return parts;
+
+
+        }
+
+        static Part ConvertGetPartToPart(GetPart getPart)
+        {
+            Part part=new Part()
+            {
+                PartNum = getPart.PartNum,
+                PartName = getPart.PartName,
+                PartType = getPart.PartType,
+                Price = getPart.Price,
+                Unit = getPart.Unit,
+                Num = getPart.GetNum
+            };
+            return part;
+        }
         public static void ConfimGetPart(IEnumerable<GetPart> getParts,PartContext pc)
         {
            
